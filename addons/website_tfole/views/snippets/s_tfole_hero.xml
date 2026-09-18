@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_hero" name="Tfole Hero">
+        <section class="s_tfole_hero o_tfole_section_tint pt48 pb48"
+                 data-snippet="s_tfole_hero" data-name="Tfole Hero">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <h1 class="o_tfole_hero_title">Play that lasts</h1>
+                        <p class="lead mb-4">
+                            Wooden toys, picture books and craft kits, chosen for
+                            small hands and long afternoons.
+                        </p>
+                        <a href="/shop" class="btn btn-primary btn-lg">Shop everything</a>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="/website_tfole/static/src/img/snippets/hero_placeholder.png"
+                             alt="" class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

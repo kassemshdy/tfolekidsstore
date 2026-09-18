@@ -22,6 +22,13 @@
         'views/layout.xml',
         'views/shop.xml',
         'views/product.xml',
+        'views/snippets/s_tfole_hero.xml',
+        'views/snippets/s_tfole_age_finder.xml',
+        'views/snippets/s_tfole_highlight.xml',
+        'views/snippets/s_tfole_ugc.xml',
+        'views/snippets/s_tfole_contact_cta.xml',
+        'views/snippets/s_tfole_faq.xml',
+        'views/snippets/snippets.xml',
     ],
 
     # Three layers, loaded in this order. See CLAUDE.md for what belongs where.

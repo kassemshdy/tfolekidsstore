@@ -146,7 +146,9 @@ Tasks:
    age-range selector, newsletter/WhatsApp CTA, FAQ accordion.
 2. Each snippet needs: the template, registration in `website.snippets`, a
    thumbnail, and editable `data-oe-*` fields so content is editable in place.
-3. Snippet options (colour variants, spacing) via `snippet_options` XML.
+3. ~~Snippet options via `snippet_options` XML.~~ That mechanism no longer
+   exists in Odoo 19 — see CLAUDE.md. Sections get colour and spacing from
+   html_builder's generic plugins, so no custom option code was needed.
 
 **Done when:** a new landing page can be assembled from the editor in ten
 minutes.

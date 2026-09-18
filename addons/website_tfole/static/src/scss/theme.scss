@@ -190,3 +190,68 @@
     color: $tfole-ink-muted;
     font-size: .9375rem;
 }
+
+// --- Snippets ---------------------------------------------------------------
+
+.s_tfole_hero {
+    .o_tfole_hero_title {
+        font-size: clamp(2rem, 6vw, 3.25rem);
+        line-height: 1.05;
+        letter-spacing: -.02em;
+        margin-block-end: 1rem;
+    }
+}
+
+// Shop-by-age cards. Whole card is the link, so the tap target is the card
+// rather than the few characters of text inside it.
+.o_tfole_age_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 6.5rem;
+    padding: 1rem;
+    border-radius: $border-radius-lg;
+    background-color: $tfole-orange-50;
+    border: 2px solid transparent;
+    color: $tfole-ink;
+    text-decoration: none;
+    text-align: center;
+    transition: border-color .15s ease, background-color .15s ease;
+
+    &:hover,
+    &:focus-visible {
+        background-color: $tfole-orange-100;
+        border-color: $tfole-orange;
+        color: $tfole-ink;
+        text-decoration: none;
+    }
+}
+
+.o_tfole_age_card_label {
+    font-weight: 700;
+    font-size: 1.0625rem;
+}
+
+.o_tfole_age_card_range {
+    font-size: .875rem;
+    color: $tfole-ink-muted;
+}
+
+.o_tfole_cta_panel {
+    background-color: $tfole-orange-50;
+    border-radius: $border-radius-xl;
+    padding-block: 2.5rem;
+    padding-inline: 1.5rem;
+}
+
+.s_tfole_faq {
+    .accordion-button {
+        font-weight: 600;
+
+        &:not(.collapsed) {
+            background-color: $tfole-orange-50;
+            color: $tfole-ink;
+        }
+    }
+}

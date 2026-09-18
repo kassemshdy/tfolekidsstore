@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_age_finder" name="Shop by Age">
+        <!--
+            Links carry age bounds in months, matching the fields on
+            product.template. The controller filters on overlap, so a
+            12-36 month toy appears under both "Baby" and "Toddler".
+        -->
+        <section class="s_tfole_age_finder pt40 pb40"
+                 data-snippet="s_tfole_age_finder" data-name="Shop by Age">
+            <div class="container">
+                <h2 class="text-center mb-2">Shop by age</h2>
+                <p class="text-center text-muted mb-4">Find something that fits right now.</p>
+                <div class="row g-3 justify-content-center">
+                    <div class="col-6 col-md-3">
+                        <a href="/shop?age_min=0&amp;age_max=24" class="o_tfole_age_card">
+                            <span class="o_tfole_age_card_label">Baby</span>
+                            <span class="o_tfole_age_card_range">0&#8211;2 years</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="/shop?age_min=24&amp;age_max=60" class="o_tfole_age_card">
+                            <span class="o_tfole_age_card_label">Toddler</span>
+                            <span class="o_tfole_age_card_range">2&#8211;5 years</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="/shop?age_min=60&amp;age_max=96" class="o_tfole_age_card">
+                            <span class="o_tfole_age_card_label">Big kid</span>
+                            <span class="o_tfole_age_card_range">5&#8211;8 years</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="/shop?age_min=96" class="o_tfole_age_card">
+                            <span class="o_tfole_age_card_label">Older</span>
+                            <span class="o_tfole_age_card_range">8+ years</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_faq" name="Tfole FAQ">
+        <!--
+            Questions only. The answers are left as prompts on purpose:
+            delivery, returns and payment terms are Phase 6 decisions, and a
+            placeholder answer here would become a published promise the moment
+            somebody forgets to edit it.
+        -->
+        <section class="s_tfole_faq pt48 pb48"
+                 data-snippet="s_tfole_faq" data-name="Tfole FAQ">
+            <div class="container">
+                <h2 class="text-center mb-4">Questions</h2>
+                <div class="accordion" id="s_tfole_faq_accordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#s_tfole_faq_q1" aria-expanded="true"
+                                    aria-controls="s_tfole_faq_q1">
+                                How long does delivery take?
+                            </button>
+                        </h3>
+                        <div id="s_tfole_faq_q1" class="accordion-collapse collapse show"
+                             data-bs-parent="#s_tfole_faq_accordion">
+                            <div class="accordion-body">
+                                Write the real answer here once delivery is set up.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#s_tfole_faq_q2" aria-expanded="false"
+                                    aria-controls="s_tfole_faq_q2">
+                                How do I pay?
+                            </button>
+                        </h3>
+                        <div id="s_tfole_faq_q2" class="accordion-collapse collapse"
+                             data-bs-parent="#s_tfole_faq_accordion">
+                            <div class="accordion-body">
+                                Write the real answer here once payment is set up.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#s_tfole_faq_q3" aria-expanded="false"
+                                    aria-controls="s_tfole_faq_q3">
+                                Can I exchange something?
+                            </button>
+                        </h3>
+                        <div id="s_tfole_faq_q3" class="accordion-collapse collapse"
+                             data-bs-parent="#s_tfole_faq_accordion">
+                            <div class="accordion-body">
+                                Write the real answer here once returns are agreed.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

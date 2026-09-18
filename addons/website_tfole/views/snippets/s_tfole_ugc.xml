@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_ugc" name="Customer Photos">
+        <!--
+            A strip for photos customers send in. Replace each image in the
+            editor. Nothing here claims a review or a rating: invented social
+            proof is both dishonest and, in most markets, illegal.
+        -->
+        <section class="s_tfole_ugc pt40 pb40"
+                 data-snippet="s_tfole_ugc" data-name="Customer Photos">
+            <div class="container">
+                <h2 class="text-center mb-4">From your homes</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <img src="/website_tfole/static/src/img/snippets/ugc_placeholder.png"
+                             alt="" class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/website_tfole/static/src/img/snippets/ugc_placeholder.png"
+                             alt="" class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/website_tfole/static/src/img/snippets/ugc_placeholder.png"
+                             alt="" class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/website_tfole/static/src/img/snippets/ugc_placeholder.png"
+                             alt="" class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

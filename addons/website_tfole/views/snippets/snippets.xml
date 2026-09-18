@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Snippet registration.
+
+        Odoo 19 note: the XML snippet_options mechanism CLAUDE.md describes no
+        longer exists. Options moved to html_builder's JS "builder-plugins"
+        registry, and no module ships snippet_options XML any more. These
+        snippets are built as plain <section> elements, which is what makes the
+        editor offer background colour, padding and width on them without any
+        custom plugin. Only snippet-specific controls would need JS.
+    -->
+
+    <template id="snippets" inherit_id="website.snippets" name="Tfole snippets">
+        <xpath expr="//t[@id='installed_snippets_hook']" position="before">
+
+            <t t-snippet="website_tfole.s_tfole_hero" string="Tfole Hero" group="intro"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_hero.svg"/>
+
+            <t t-snippet="website_tfole.s_tfole_age_finder" string="Shop by Age" group="catalog"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_age_finder.svg"/>
+
+            <t t-snippet="website_tfole.s_tfole_highlight" string="Product Highlight" group="catalog"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_highlight.svg"/>
+
+            <t t-snippet="website_tfole.s_tfole_ugc" string="Customer Photos" group="people"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_ugc.svg"/>
+
+            <t t-snippet="website_tfole.s_tfole_contact_cta" string="Chat to Us" group="contact_and_forms"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_contact_cta.svg"/>
+
+            <t t-snippet="website_tfole.s_tfole_faq" string="Tfole FAQ" group="content"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_faq.svg"/>
+
+        </xpath>
+    </template>
+
+</odoo>

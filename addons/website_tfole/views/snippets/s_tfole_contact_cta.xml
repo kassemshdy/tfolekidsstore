@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_contact_cta" name="Chat to Us">
+        <!--
+            The WhatsApp link is deliberately left pointing at the contact page.
+            Point it at wa.me/<number> once there is a real number to publish;
+            a guessed number reaches a stranger.
+        -->
+        <section class="s_tfole_contact_cta pt48 pb48"
+                 data-snippet="s_tfole_contact_cta" data-name="Chat to Us">
+            <div class="container">
+                <div class="o_tfole_cta_panel text-center">
+                    <h2 class="mb-2">Not sure what suits?</h2>
+                    <p class="mb-4">
+                        Tell us the age and what they are into. We will point you
+                        at two or three things.
+                    </p>
+                    <a href="/contactus" class="btn btn-primary btn-lg">Message us</a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

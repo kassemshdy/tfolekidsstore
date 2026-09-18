@@ -124,11 +124,26 @@ Style rules:
 
 A snippet needs four things or it won't appear in the editor:
 1. The template in `views/snippets/`
-2. Registration in an inherit of `website.snippets`
+2. Registration in an inherit of `website.snippets`, via
+   `<t t-snippet="website_tfole.s_x" string="..." group="..." t-thumbnail="..."/>`
+   inserted at the `installed_snippets_hook`
 3. A thumbnail image
-4. `data-oe-*` attributes on editable content so it's editable in place
+4. Content the editor can reach — see below
 
-Options (colour variants, spacing) go in a `snippet_options` inherit.
+Load order matters: list each snippet template in `__manifest__.py` **before**
+`views/snippets/snippets.xml`, or registration references a template that does
+not exist yet.
+
+**Options, in Odoo 19:** the `snippet_options` XML mechanism is gone. No module
+ships it any more; options moved to `html_builder`'s JS `builder-plugins`
+registry. In practice you rarely need one — build each snippet as a
+`<section>` and the editor supplies background colour, padding and width from
+its generic section plugins. Only snippet-specific controls justify writing a
+plugin.
+
+Editability: plain text and images inside a snippet dropped into an
+`oe_structure` are editable without `data-oe-*`. Those attributes are for
+binding to a record field, which is a different job.
 
 ---
 

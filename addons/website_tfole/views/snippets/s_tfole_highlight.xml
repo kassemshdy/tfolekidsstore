@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_highlight" name="Product Highlight">
+        <section class="s_tfole_highlight o_tfole_section_cream pt48 pb48"
+                 data-snippet="s_tfole_highlight" data-name="Product Highlight">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <img src="/website_tfole/static/src/img/snippets/hero_placeholder.png"
+                             alt="" class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <span class="o_tfole_age_badge">Staff pick</span>
+                        <h2 class="mt-2">A toy worth the shelf space</h2>
+                        <p>
+                            Say why this one earns its place. What it is made of,
+                            what a child actually does with it, how long it lasts.
+                        </p>
+                        <a href="/shop" class="btn btn-primary">See the product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,4 +1,5 @@
 from odoo import api, fields, models, _
+from odoo.fields import Domain
 
 
 class ProductTemplate(models.Model):
@@ -70,3 +71,40 @@ class ProductTemplate(models.Model):
         if high <= 24:
             return _("%(low)s-%(high)s months", low=low, high=high)
         return _("%(low)s-%(high)s years", low=low // 12, high=high // 12)
+
+    # Age filtering on the shop ------------------------------------------
+
+    @api.model
+    def _tfole_age_domain(self, low, high):
+        """Domain matching products whose age range overlaps [low, high].
+
+        Overlap, not containment: a 12-36 month toy belongs in a "0-2 years"
+        bracket as much as in a "2-5 years" one.
+
+        tfole_age_max_months = 0 means open-ended ("3+ years"), so there is no
+        upper bound to compare and it always satisfies the lower test.
+
+        Products with no range set match nothing, which is deliberate: an
+        unset range is unknown, not universal.
+        """
+        domain = Domain.TRUE
+        if high is not None:
+            domain &= Domain('tfole_age_min_months', '<=', high)
+        if low is not None:
+            domain &= (
+                Domain('tfole_age_max_months', '>=', low)
+                | Domain('tfole_age_max_months', '=', 0)
+            )
+        return domain
+
+    def _search_get_detail(self, website, order, options):
+        """Add the age filter to the domain the shop listing actually uses."""
+        detail = super()._search_get_detail(website, order, options)
+        low = options.get('tfole_age_min')
+        high = options.get('tfole_age_max')
+        if low is None and high is None:
+            return detail
+        detail['base_domain'] = list(detail['base_domain']) + [
+            self._tfole_age_domain(low, high)
+        ]
+        return detail
