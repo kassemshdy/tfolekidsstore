@@ -1,0 +1,34 @@
+# Never commit these — they are large, machine-specific, or secret.
+
+# Local environment
+.env
+
+# Odoo filestore and data dir (lives in a Docker volume, but guard against a
+# stray bind-mount). Product images are here — back it up, don't commit it.
+filestore/
+*.odoo-filestore
+
+# Database dumps
+*.sql
+*.dump
+*.zip
+backups/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Compiled assets / editor noise
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Playwright (Phase 9)
+tests/node_modules/
+tests/test-results/
+tests/playwright-report/
+tests/blob-report/
+tests/.cache/
