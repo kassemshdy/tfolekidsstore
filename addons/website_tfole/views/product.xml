@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Product detail page ===== -->
+
+    <template id="product_age_badge" inherit_id="website_sale.product"
+              name="Tfole: age badge on the product page">
+        <!--
+            Above the price block, which puts it under the title without
+            needing an XPath onto the title itself (it is rendered through a
+            t-call that appears twice, for the mobile and desktop layouts).
+        -->
+        <xpath expr="//div[hasclass('o_wsale_product_details_content_section_price')]"
+               position="before">
+            <div t-if="product.tfole_age_label" class="mb-2">
+                <span class="o_tfole_age_badge" t-out="product.tfole_age_label"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="product_extra_details" inherit_id="website_sale.product"
+              name="Tfole: what's in the box and delivery note">
+        <!--
+            Both blocks render only when they have something to say.
+
+            The delivery note is intentionally empty by default. Delivery
+            terms are a Phase 6 decision and nothing has been agreed, so the
+            product page must not invent a promise. Set
+            website.tfole_delivery_note and the block appears.
+        -->
+        <xpath expr="//div[hasclass('o_wsale_product_details_content_section_price')]"
+               position="after">
+
+            <div t-if="product.tfole_box_contents" class="o_tfole_box_contents mt-4">
+                <h3 class="h6 text-uppercase">What's in the box</h3>
+                <div t-field="product.tfole_box_contents"/>
+            </div>
+
+            <p t-if="website.tfole_delivery_note" class="o_tfole_delivery_note mt-3 mb-0">
+                <i class="fa fa-truck me-2" aria-hidden="true"/>
+                <span t-out="website.tfole_delivery_note"/>
+            </p>
+
+        </xpath>
+    </template>
+
+    <!-- ===== Unvetted default claims ===== -->
+
+    <data noupdate="1">
+        <!--
+            Odoo ships website_sale.product_terms_and_conditions active, and it
+            prints "30-day money-back guarantee" and "Shipping: 2-3 Business
+            Days" on every product page. Tfole has agreed to neither: returns
+            and delivery terms are Phase 6 decisions and nothing is settled.
+            Shipping a promise nobody made is worse than shipping no promise.
+
+            Deactivated once, at install. noupdate="1" because this view is
+            toggleable from the editor's Customize panel - once the real terms
+            exist, switching it back on there must stick, and a plain data
+            record would flip it off again on the next upgrade.
+        -->
+        <record id="website_sale.product_terms_and_conditions" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+    </data>
+
+</odoo>

@@ -1,9 +1,9 @@
-id,name,default_code,list_price,type,is_published,website_sequence,public_categ_ids/id,description_sale
-product_stacking_rings,Wooden Stacking Rings,TF-001,18.00,consu,1,10,"website_tfole.categ_toys,website_tfole.categ_toys_wooden",Seven graded rings on a solid beech base. Builds size ordering and grip control.
-product_shape_sorter,Wooden Shape Sorter,TF-002,24.00,consu,1,20,"website_tfole.categ_toys,website_tfole.categ_toys_wooden",Ten shapes and a lidded box. The lid lifts off so younger hands can start with posting.
-product_farm_puzzle,Farm Animals Puzzle,TF-003,12.50,consu,1,30,"website_tfole.categ_toys,website_tfole.categ_toys_puzzles",Chunky eight-piece inset puzzle with knob handles.
-product_alphabet_puzzle,Alphabet Floor Puzzle,TF-004,16.00,consu,1,40,"website_tfole.categ_toys,website_tfole.categ_toys_puzzles",Twenty-six interlocking foam tiles that double as a play mat.
-product_first_stories,My First Story Book,TF-005,9.00,consu,1,50,website_tfole.categ_books,Board book with rounded corners and twelve wipe-clean pages.
-product_bedtime_tales,Bedtime Tales Collection,TF-006,22.00,consu,1,60,website_tfole.categ_books,Four hardback stories in a slipcase.
-product_crayon_set,Washable Crayon Set,TF-007,7.50,consu,1,70,website_tfole.categ_crafts,Twelve chunky crayons that wash out of fabric.
-product_finger_paint,Finger Paint Starter Kit,TF-008,14.00,consu,1,80,website_tfole.categ_crafts,"Six non-toxic pots, a brush and twenty sheets of thick paper."
+id,name,default_code,list_price,type,is_published,website_sequence,public_categ_ids/id,description_sale,tfole_age_min_months,tfole_age_max_months,tfole_box_contents
+product_stacking_rings,Wooden Stacking Rings,TF-001,18.00,consu,1,10,"website_tfole.categ_toys,website_tfole.categ_toys_wooden",Seven graded rings on a solid beech base. Builds size ordering and grip control.,12,36,"<ul><li>Beech base post</li><li>Seven graded rings</li><li>Care leaflet</li></ul>"
+product_shape_sorter,Wooden Shape Sorter,TF-002,24.00,consu,1,20,"website_tfole.categ_toys,website_tfole.categ_toys_wooden",Ten shapes and a lidded box. The lid lifts off so younger hands can start with posting.,18,48,"<ul><li>Lidded wooden box</li><li>Ten solid shapes</li><li>Care leaflet</li></ul>"
+product_farm_puzzle,Farm Animals Puzzle,TF-003,12.50,consu,1,30,"website_tfole.categ_toys,website_tfole.categ_toys_puzzles",Chunky eight-piece inset puzzle with knob handles.,24,60,"<ul><li>Puzzle board</li><li>Eight knobbed pieces</li></ul>"
+product_alphabet_puzzle,Alphabet Floor Puzzle,TF-004,16.00,consu,1,40,"website_tfole.categ_toys,website_tfole.categ_toys_puzzles",Twenty-six interlocking foam tiles that double as a play mat.,36,72,"<ul><li>Twenty-six lettered tiles</li><li>Mesh storage bag</li></ul>"
+product_first_stories,My First Story Book,TF-005,9.00,consu,1,50,website_tfole.categ_books,Board book with rounded corners and twelve wipe-clean pages.,6,24,"<ul><li>One board book, twelve pages</li></ul>"
+product_bedtime_tales,Bedtime Tales Collection,TF-006,22.00,consu,1,60,website_tfole.categ_books,Four hardback stories in a slipcase.,36,96,"<ul><li>Four hardback books</li><li>Printed slipcase</li></ul>"
+product_crayon_set,Washable Crayon Set,TF-007,7.50,consu,1,70,website_tfole.categ_crafts,Twelve chunky crayons that wash out of fabric.,24,72,"<ul><li>Twelve chunky crayons</li><li>Tin storage box</li></ul>"
+product_finger_paint,Finger Paint Starter Kit,TF-008,14.00,consu,1,80,website_tfole.categ_crafts,"Six non-toxic pots, a brush and twenty sheets of thick paper.",36,84,"<ul><li>Six paint pots</li><li>One brush</li><li>Twenty sheets of paper</li></ul>"

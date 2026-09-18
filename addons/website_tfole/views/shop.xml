@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Product card ===== -->
+
+    <template id="products_item_age_badge" inherit_id="website_sale.products_item"
+              name="Tfole: age badge on the product card">
+        <!--
+            Sits directly above the product title, inside the tile's text
+            block. Inserted before the h2 rather than replacing any part of
+            the tile, so upstream changes to the card survive an upgrade.
+        -->
+        <xpath expr="//h2[hasclass('o_wsale_products_item_title')]" position="before">
+            <span t-if="product.tfole_age_label"
+                  class="o_tfole_age_badge"
+                  t-out="product.tfole_age_label"/>
+        </xpath>
+    </template>
+
+    <!-- ===== Shop grid ===== -->
+
+    <template id="products_grid" inherit_id="website_sale.products"
+              name="Tfole: shop grid hook">
+        <!--
+            Odoo drives the column count from website.shop_ppr, so the number
+            of columns is a setting rather than a template edit; it is set in
+            data/website_config.xml. All this override does is tag the grid so
+            theme.scss can reach it without depending on Odoo's own classes.
+        -->
+        <xpath expr="//div[@id='products_grid']" position="attributes">
+            <attribute name="class" add="o_tfole_grid" separator=" "/>
+        </xpath>
+    </template>
+
+</odoo>

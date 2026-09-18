@@ -123,3 +123,70 @@
     margin-block: 1rem;
     margin-inline: 0;
 }
+
+// --- Shop: product cards ----------------------------------------------------
+
+// Age range badge. Uses the pale orange tint, not the brand orange: ink on
+// $tfole-orange-100 is 12.90:1, whereas white on the brand orange is 3.60:1
+// and would fail at this text size.
+.o_tfole_age_badge {
+    display: inline-block;
+    background-color: $tfole-orange-100;
+    color: $tfole-ink;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    padding-block: .25rem;
+    padding-inline: .5rem;
+    border-radius: 1rem;
+    margin-block-end: .35rem;
+}
+
+.o_tfole_grid {
+    .oe_product_cart {
+        // Lift the card off the page rather than boxing it in.
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .oe_product_image {
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+        background-color: $tfole-cream;
+    }
+
+    .o_wsale_products_item_title {
+        font-size: 1rem;
+        line-height: 1.3;
+        margin-block-end: .25rem;
+    }
+
+    .product_price {
+        font-size: 1.0625rem;
+    }
+
+    // Hover lift, but only where hovering is a real interaction. On a touch
+    // screen this fires on tap and leaves the card stuck in a hover state.
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+        .oe_product_cart:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// --- Product page -----------------------------------------------------------
+
+.o_tfole_box_contents {
+    ul {
+        padding-inline-start: 1.1rem;
+        margin-block-end: 0;
+    }
+
+    li + li {
+        margin-block-start: .25rem;
+    }
+}
+
+.o_tfole_delivery_note {
+    color: $tfole-ink-muted;
+    font-size: .9375rem;
+}

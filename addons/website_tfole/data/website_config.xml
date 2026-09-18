@@ -36,6 +36,16 @@
         <field name="company_id" ref="base.main_company"/>
 
         <!--
+            Shop grid. Odoo drives the column count from these, so the grid is
+            a setting rather than a template override. 3 across on desktop
+            keeps the cards large enough for the photography to carry; Odoo
+            collapses to 2 and then 1 on smaller viewports on its own.
+            24 per page divides evenly by both 3 and 2, so no ragged last row.
+        -->
+        <field name="shop_ppr">3</field>
+        <field name="shop_ppg">24</field>
+
+        <!--
             TODO(Tfole): social handles and favicon.
 
             Deliberately not filled with invented values - a guessed handle
