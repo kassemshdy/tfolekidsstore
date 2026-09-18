@@ -1,9 +1,105 @@
-// Brand palette, fonts, radii and spacing.
+// ============================================================================
+// Tfole brand tokens
+// ============================================================================
 //
 // Injected into web._assets_primary_variables, which Odoo reads BEFORE it
-// compiles Bootstrap. A variable changed here restyles the entire site,
-// including components no custom template ever touches. That is the point:
-// prefer setting a variable here over writing a rule in theme.scss.
+// compiles Bootstrap. Changing a value here restyles the whole site, including
+// components no custom template ever touches. Prefer editing this file over
+// writing a rule in theme.scss.
 //
-// Phase 1 declares the layer and leaves it empty on purpose. Phase 2 fills it
-// with the real palette and self-hosted font families.
+// Contrast: every pairing below was checked against WCAG AA (4.5:1 for body
+// text, 3:1 for large/bold text and non-text UI). If you change a colour,
+// re-check it - the numbers in the comments are not decorative.
+
+// --- Raw brand colours ------------------------------------------------------
+
+// The brand orange. 3.60:1 on white, which is BELOW the 4.5:1 needed for body
+// text and for white button labels. So it is a decorative colour only:
+// large bold display text, borders, icons, illustration fills. Never a
+// background for normal-size text, in either direction.
+$tfole-orange:            #E8572A;
+
+// The interactive orange: same family, darkened until white text clears AA.
+// White on this is 5.09:1; as a link on white it is 5.09:1, on cream 4.77:1.
+$tfole-orange-interactive: #C63F16;
+$tfole-orange-hover:       #A8330F;  // white on this: 6.68:1
+
+// Orange tints. Safe as backgrounds for ink text (14.68:1 and 12.90:1).
+$tfole-orange-50:         #FFF1EA;
+$tfole-orange-100:        #FBE0D4;
+
+// Teal counterweight, so the site is not monochrome-orange.
+// White on this: 6.91:1. As a link on cream: 6.48:1.
+$tfole-teal:              #116466;
+
+// Warm neutrals.
+$tfole-cream:             #FFF6EF;  // light section background
+$tfole-sand:              #F2E7DC;  // footer, subtle fills
+$tfole-ink:               #2A1E16;  // body text. 16.21:1 on white
+$tfole-ink-muted:         #6B5648;  // secondary text. 6.89:1 on white
+
+// --- Odoo colour palette ----------------------------------------------------
+//
+// $o-user-color-palette is merged over the selected default palette, and drives
+// Odoo's colour combinations (o-cc1..o-cc5) throughout the frontend and the
+// editor's colour pickers.
+
+$o-user-color-palette: (
+    'o-color-1': $tfole-orange-interactive,  // primary: buttons, links
+    'o-color-2': $tfole-teal,                // secondary
+    'o-color-3': $tfole-cream,               // light section background
+    'o-color-4': #FFFFFF,                    // page background
+    'o-color-5': $tfole-ink,                 // dark / text
+);
+
+// --- Typography -------------------------------------------------------------
+//
+// Rubik: friendly and slightly rounded without being a novelty face, and
+// legible at small sizes on a phone. Shipped as one variable woff2 covering
+// weights 300-900. It also has an Arabic cut, so Phase 5 can add Arabic
+// without introducing a second typeface.
+//
+// Note the absence of a 'url' key. That key is what makes Odoo emit a <link>
+// to fonts.googleapis.com; we self-host instead and declare @font-face in
+// theme.scss.
+
+$o-theme-font-configs: map-merge($o-theme-font-configs, (
+    'Rubik': (
+        'family': ('Rubik', sans-serif),
+    ),
+));
+
+// --- Website values ---------------------------------------------------------
+//
+// Each null in $o-base-website-values-palette falls through to Bootstrap.
+// Everything set here is a deliberate departure from stock Odoo.
+
+$o-user-website-values: (
+    'font':          'Rubik',
+    'headings-font': 'Rubik',
+    'navbar-font':   'Rubik',
+    'buttons-font':  'Rubik',
+
+    // Arabic needs more leading than Latin (Phase 5 sets that per-language).
+    // 1.6 is a comfortable Latin baseline to start from.
+    'body-line-height':     1.6,
+    'headings-line-height': 1.15,
+
+    // Rounded, friendly geometry. Pill buttons, softly rounded inputs.
+    'btn-border-radius':    2rem,
+    'btn-border-radius-sm': 1.5rem,
+    'btn-border-radius-lg': 2.5rem,
+    'btn-padding-y':        .625rem,
+    'btn-padding-x':        1.5rem,
+    'btn-padding-y-lg':     .875rem,
+    'btn-padding-x-lg':     2.25rem,
+
+    'input-border-radius':    .75rem,
+    'input-border-radius-lg': 1rem,
+    'input-padding-y':        .625rem,
+    'input-padding-x':        1rem,
+
+    // Links carry meaning on a storefront; underline them only on hover so the
+    // product grid does not turn into a wall of rules.
+    'link-underline': 'hover',
+);

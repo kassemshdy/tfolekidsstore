@@ -1,7 +1,32 @@
-// Bootstrap internals the primary-variables layer cannot reach.
+// ============================================================================
+// Bootstrap internals the primary-variables layer cannot reach
+// ============================================================================
 //
-// Prepended to web._assets_frontend_helpers so it lands ahead of Bootstrap's
-// own helper definitions.
+// Prepended to web._assets_frontend_helpers, so these land before Bootstrap's
+// own !default declarations and win.
 //
-// Reach for this only when primary_variables.scss genuinely cannot express the
-// change. Empty until Phase 2 proves something needs it.
+// Only put things here that genuinely have no equivalent in
+// $o-user-website-values. Colours and fonts belong in primary_variables.scss.
+
+// Corner radius. Odoo's website values cover buttons and inputs but not the
+// generic $border-radius that cards, alerts, dropdowns and modals inherit.
+$border-radius:    .75rem;
+$border-radius-sm: .5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+
+// Softer, warmer shadows than Bootstrap's neutral grey. Tinted with the ink
+// colour so they sit on the warm palette instead of greying it down.
+$box-shadow-sm: 0 .125rem .5rem rgba(42, 30, 22, .07);
+$box-shadow:    0 .5rem 1.5rem rgba(42, 30, 22, .10);
+$box-shadow-lg: 0 1rem 3rem rgba(42, 30, 22, .13);
+
+// Slightly tighter headings than Bootstrap's default cascade, so product
+// titles do not shout on a phone.
+$headings-font-weight: 600;
+
+// Bootstrap's default focus ring is a flat blue. Tie it to the brand instead;
+// this is a visible-focus affordance, so it stays clearly visible.
+$focus-ring-width: .25rem;
+$focus-ring-opacity: .35;
+$focus-ring-color: rgba(198, 63, 22, .35);

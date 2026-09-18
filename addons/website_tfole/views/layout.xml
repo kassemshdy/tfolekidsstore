@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Layout changes that the website editor does NOT own.
+
+        Deliberately not touched here: the #footer and #wrapwrap structures are
+        oe_structure regions, meaning the editor owns their contents. A module
+        that rewrote them would fight every edit the operator makes, and lose
+        on the next save. Those are styled in theme.scss and filled with
+        snippets in Phase 4.
+    -->
+
+    <template id="layout_no_google_font_preconnect" inherit_id="website.layout"
+              name="Tfole: drop the Google Fonts preconnect">
+        <!--
+            position="replace" with an empty body is the only way to remove a
+            node in QWeb inheritance, so it is used here on purpose.
+
+            website.layout emits this preconnect unconditionally, and its own
+            source carries a TODO admitting it should be conditional on a Google
+            font actually being used. Tfole self-hosts Rubik and loads nothing
+            from Google, so every page was opening a connection to a third party
+            for no benefit - a wasted round trip on first paint and a data
+            protection question we have no reason to answer.
+
+            Upgrade risk, stated plainly: if a future Odoo changes or removes
+            this link, this XPath stops matching and the module fails to load.
+            That is the cost of node removal. Check this template when moving
+            off 19.0.
+        -->
+        <xpath expr="//link[@rel='preconnect'][@href='https://fonts.gstatic.com/']" position="replace"/>
+    </template>
+
+    <template id="layout_topbar" inherit_id="website.layout"
+              name="Tfole: brand strip above the header">
+        <xpath expr="//header" position="before">
+            <div class="o_tfole_topbar">
+                <div class="container text-center">
+                    <!--
+                        Placeholder copy. Descriptive on purpose: it makes no
+                        promise about delivery, pricing or stock, because those
+                        are Phase 6 decisions and none of them are settled.
+                        Replace with the real line before launch.
+                    -->
+                    <span>Toys, books and craft kits for little hands</span>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

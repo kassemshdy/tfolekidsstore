@@ -1,11 +1,125 @@
-// Our own component styles, on top of a Bootstrap already reshaped by
-// primary_variables.scss.
+// ============================================================================
+// Tfole component styles
+// ============================================================================
 //
-// Two rules that matter here:
-//   - Logical properties only: margin-inline-start, not margin-left;
-//     inset-inline-end, not right. This is what will make RTL work when
-//     Arabic lands in Phase 5.
-//   - If you are about to write a raw colour or size, it belongs in
-//     primary_variables.scss instead.
+// Sits on top of a Bootstrap already reshaped by primary_variables.scss.
 //
-// Empty until Phase 2.
+// Two rules hold throughout this file:
+//   1. Logical properties only - margin-inline-start, not margin-left;
+//      inset-inline-end, not right; padding-block, not padding-top/bottom.
+//      This is what will make the Arabic RTL work in Phase 5 mostly free.
+//   2. If you are about to write a raw colour or size, it belongs in
+//      primary_variables.scss as a token instead.
+
+// --- Self-hosted typeface ---------------------------------------------------
+//
+// Rubik, one variable file per subset covering weights 300-900. Self-hosted
+// deliberately: no round trip to a third party on first paint, and no GDPR
+// question about who is being told about our visitors.
+//
+// The unicode-range split means a page with no latin-ext characters never
+// downloads that file. Licence: static/src/fonts/OFL.txt.
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300 900;
+    font-display: swap;
+    src: url('/website_tfole/static/src/fonts/rubik-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+        U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300 900;
+    font-display: swap;
+    src: url('/website_tfole/static/src/fonts/rubik-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+        U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+// --- Brand-level page furniture --------------------------------------------
+
+// The masthead strip above the navigation.
+.o_tfole_topbar {
+    background-color: $tfole-ink;
+    color: $tfole-cream;
+    font-size: .8125rem;
+    padding-block: .4rem;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: .15em;
+    }
+}
+
+// The header's brand link. Odoo renders the website logo or name here; we only
+// set its typography, so replacing it with a real logo image later needs no
+// CSS change.
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+// --- Footer -----------------------------------------------------------------
+//
+// #footer is an oe_structure: the website editor owns its contents, and a
+// module that rewrote them would fight every edit the operator makes. So we
+// style the element and leave its markup alone.
+
+#wrapwrap footer {
+    background-color: $tfole-sand;
+    color: $tfole-ink;
+
+    h5 {
+        font-size: .875rem;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: $tfole-ink-muted;
+    }
+
+    a:not(.btn) {
+        color: $tfole-ink;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $tfole-orange-interactive;
+            text-decoration: underline;
+            text-underline-offset: .2em;
+        }
+    }
+
+    .o_footer_copyright {
+        border-block-start: 1px solid rgba(42, 30, 22, .12);
+        font-size: .8125rem;
+        color: $tfole-ink-muted;
+    }
+}
+
+// --- Shared component polish ------------------------------------------------
+
+// Odoo's stock cards are square and flat against a white page. Warm them up.
+.card {
+    border-color: rgba(42, 30, 22, .08);
+}
+
+// Section backgrounds used by the layout and, later, by snippets.
+.o_tfole_section_cream { background-color: $tfole-cream; }
+.o_tfole_section_tint  { background-color: $tfole-orange-50; }
+
+// A decorative use of the brand orange: large, bold, and never body text.
+.o_tfole_accent_rule {
+    border: 0;
+    border-block-start: .25rem solid $tfole-orange;
+    inline-size: 3.5rem;
+    opacity: 1;
+    margin-block: 1rem;
+    margin-inline: 0;
+}

@@ -19,7 +19,7 @@
         'data/product.template.csv',
         'data/product_images.xml',
         'data/website_config.xml',
-        'views/dev_smoke.xml',
+        'views/layout.xml',
     ],
 
     # Three layers, loaded in this order. See CLAUDE.md for what belongs where.
