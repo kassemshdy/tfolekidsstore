@@ -33,6 +33,12 @@ Odoo runs with `--dev=xml,qweb,reload`. XML and QWeb changes apply on refresh.
 Python changes reload the worker. Manifest changes and new data files need
 `make upgrade`.
 
+Expect log noise: rendering pages in dev mode makes Odoo emit
+`Found deprecated directive @t-esc ... Replace by @t-out` warnings by the
+dozen. They come from core `website`, `website_sale` and `portal` templates,
+not from ours. When checking a change for warnings, filter to `website_tfole`
+or read the install/upgrade log rather than the whole runtime log.
+
 `make upgrade`, `make init` and `make reinit` use a throwaway
 `docker compose run` container, so they never fight the running server for port
 8069. The running server picks up the change through Odoo's registry signalling.

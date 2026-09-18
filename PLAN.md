@@ -1,7 +1,7 @@
 # Tfole Store — Custom Odoo Community Build Plan
 
 Target: a fully custom-designed, Arabic-first eCommerce storefront on self-hosted
-Odoo 19 Community, developed with Claude Code and deployed to the Leaseweb box.
+Odoo 19 Community, developed with Claude Code and deployed to Railway.
 
 ---
 
@@ -11,7 +11,7 @@ These are settled. Don't relitigate them mid-build.
 
 | Question | Decision | Why |
 |---|---|---|
-| Hosting | Self-hosted Odoo **Community 19**, Docker, on Leaseweb | Odoo Online forbids custom Python modules; Odoo.sh needs a paid Enterprise subscription for infrastructure you already own |
+| Hosting | Self-hosted Odoo **Community 19**, Docker, on **Railway** | Odoo Online forbids custom Python modules; Odoo.sh needs a paid Enterprise subscription. Originally Leaseweb — changed mid-build, see below |
 | Customization vehicle | One module, `website_tfole` — **not** a `theme_*` module | Theme modules use `theme.ir.ui.view` / `theme.website.page` proxy records that get copied per website, and are mutually exclusive with other themes. For a single site you control, a plain module writing views directly is simpler to reason about and to upgrade |
 | Migration from SaaS | **Fresh database**, products re-imported via CSV | Odoo Online runs Enterprise. Restoring an Enterprise dump into Community means stripping enterprise modules from the dump — more work than re-importing a young catalogue |
 | Storefront rendering | Odoo's own QWeb frontend, not headless | Checkout, tax, delivery and payment callbacks are the expensive part to re-implement. Design freedom via QWeb + SCSS is enough |
@@ -28,6 +28,7 @@ Recorded as they were made, so later phases don't reopen them.
 | 1 | Currency: USD-only vs USD + LBP pricelist | **USD only.** No LBP pricelist. USD is pinned explicitly on the company in `data/website_config.xml`, because `base.lb` carries `currency_id = LBP` and anything deriving currency from the company country would otherwise flip pricing |
 | 1 | Arabic as the default website language | **Deferred to Phase 5.** The site is English-only for now: `ar_001` is not installed and English stays the default. The RTL discipline in CLAUDE.md still applies to every stylesheet written in the meantime — the point is to avoid shipping an Arabic site whose content is untranslated English |
 | 1 | Product catalogue | **Placeholder catalogue** of 8 products across 5 categories, so `/shop` renders and the import pipeline is proven. Replace the CSV rows with the real export; the images in `static/img/products/` are generated placeholders |
+| 8 | Hosting: Leaseweb vs Railway | **Railway.** Leaseweb is out. The tradeoff accepted: Railway routes one domain to one port for all of that domain's traffic, and multi-worker Odoo serves websockets on a separate port that cannot be path-split onto the same hostname — so production runs `workers = 0`, a single process serving every request. Fine for launch traffic; revisit if it becomes the bottleneck |
 
 ### Note for Phase 5
 
@@ -210,19 +211,51 @@ Tasks:
 
 ---
 
-## Phase 8 — Deploy to Leaseweb
+## Phase 8 — Deploy to Railway
+
+**Goal:** the storefront runs on Railway, on the custom domain, with the
+filestore surviving redeploys.
 
 Tasks:
-1. Reverse proxy (nginx or Traefik) terminating TLS.
-2. **Critical:** proxy port 8072 for longpolling/websockets in addition to 8069,
-   and set `proxy_mode = True` in `odoo.conf`. Skip this and live chat, the
-   editor's save indicator, and notifications break in ways that are hard to
-   diagnose.
-3. Set a real `admin_passwd`; disable the database manager on the public host.
-4. Backups: nightly `pg_dump` **plus** the `/var/lib/odoo` filestore. A database
-   dump without the filestore has no images. Test a restore before launch.
-5. Staging alongside production on the same box, separate DB and container.
-6. Log rotation and a basic uptime check.
+1. **Production image.** Railway has no bind mounts, so `website_tfole` is baked
+   in: a `Dockerfile` on `odoo:19` that copies `addons/` and a production
+   config. Railway builds it on every push.
+2. **Services.** The Odoo service plus Railway's managed Postgres. Wire the
+   database through Railway's Postgres variables; keep `db_name = tfole` and
+   `dbfilter = ^tfole$`.
+3. **Volume mounted at `/var/lib/odoo`.** The single most important line in this
+   phase. That path is the filestore; without a volume every product image
+   disappears on the next redeploy while the database keeps rows pointing at
+   files that no longer exist.
+4. **`workers = 0`.** Railway correlates one domain to one internal port and
+   that port takes all of the domain's traffic. Multi-worker Odoo serves
+   websockets on a separate port (8072), and there is no path-based split on a
+   single hostname, so threaded mode — where the websocket rides on the main
+   port — is the only configuration where the editor's save indicator and
+   notifications work. The cost is a single process serving every request.
+   A volume also cannot be shared across replicas, so horizontal scaling is out
+   for the same reason.
+5. **Bind to Railway's port.** The start command passes `--http-port=$PORT`.
+   Odoo does not read `PORT` on its own, and a mismatch shows up as
+   "Application failed to respond".
+6. **Run `-u website_tfole` in the start command, not a pre-deploy command.**
+   Railway's pre-deploy container runs with no volume mounted. A module update
+   there writes attachments into a filesystem that is then thrown away while the
+   database keeps the rows referencing them — corruption that surfaces later as
+   missing assets. Start command updates, then serves.
+7. `proxy_mode = True` (Railway terminates TLS), `list_db = False`, and a real
+   `admin_passwd` from an environment variable — never committed.
+8. **Custom domain.** Railway issues the certificate. Both the `CNAME` and the
+   `TXT` record are required: with only the CNAME the domain returns 404 even
+   after DNS resolves.
+9. **Backups.** Railway volume backups for the filestore **plus** a scheduled
+   `pg_dump`. A database dump without the filestore has no images. Test a
+   restore before launch.
+10. **Staging.** A second Railway environment in the same project, with its own
+    database and its own volume.
+
+**Done when:** a redeploy leaves product images intact and the site serves on
+the custom domain over HTTPS.
 
 ---
 
@@ -235,7 +268,8 @@ Tasks:
    (`--test-enable --test-tags /website_tfole`).
 3. GitHub Actions: spin up the compose stack, install the module, run the
    suite on every PR.
-4. Deploy = merge to `main` → pull → `-u website_tfole` → restart.
+4. Deploy = merge to `main` → Railway builds the image and redeploys → the
+   start command runs `-u website_tfole` against the mounted volume.
 
 ---
 
