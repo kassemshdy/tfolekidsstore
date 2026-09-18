@@ -1,0 +1,11 @@
+// Our own component styles, on top of a Bootstrap already reshaped by
+// primary_variables.scss.
+//
+// Two rules that matter here:
+//   - Logical properties only: margin-inline-start, not margin-left;
+//     inset-inline-end, not right. This is what will make RTL work when
+//     Arabic lands in Phase 5.
+//   - If you are about to write a raw colour or size, it belongs in
+//     primary_variables.scss instead.
+//
+// Empty until Phase 2.

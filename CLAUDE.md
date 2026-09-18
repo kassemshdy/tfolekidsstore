@@ -128,8 +128,16 @@ Options (colour variants, spacing) go in a `snippet_options` inherit.
 
 ## Data and translations
 
-- Seed data and product CSVs live in `data/`, version-controlled. Reimporting a
-  clean database must be one command.
+- Seed data and product CSVs live in `addons/website_tfole/data/`,
+  version-controlled. They have to sit inside the module: Odoo resolves
+  `__manifest__.py` data paths against the module directory. The repo-root
+  `data/` holds raw exports that get converted into those files.
+- Reimporting is one command: edit the CSV, `make upgrade`. `make reinit`
+  rebuilds the database from scratch.
+- Product data files are deliberately not `noupdate`, so the file always wins.
+  `data/website_config.xml` **is** `noupdate="1"` — it seeds settings an
+  operator then owns in the UI, and a plain data file would overwrite their
+  edits on every upgrade.
 - Wrap user-facing strings for translation. After adding strings, export the
   `.po`, translate, reimport — don't hardcode Arabic in templates that also
   serve English.

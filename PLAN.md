@@ -19,6 +19,26 @@ These are settled. Don't relitigate them mid-build.
 
 ---
 
+## Decisions taken during the build
+
+Recorded as they were made, so later phases don't reopen them.
+
+| Phase | Question | Decision |
+|---|---|---|
+| 1 | Currency: USD-only vs USD + LBP pricelist | **USD only.** No LBP pricelist. USD is pinned explicitly on the company in `data/website_config.xml`, because `base.lb` carries `currency_id = LBP` and anything deriving currency from the company country would otherwise flip pricing |
+| 1 | Arabic as the default website language | **Deferred to Phase 5.** The site is English-only for now: `ar_001` is not installed and English stays the default. The RTL discipline in CLAUDE.md still applies to every stylesheet written in the meantime — the point is to avoid shipping an Arabic site whose content is untranslated English |
+| 1 | Product catalogue | **Placeholder catalogue** of 8 products across 5 categories, so `/shop` renders and the import pipeline is proven. Replace the CSV rows with the real export; the images in `static/img/products/` are generated placeholders |
+
+### Note for Phase 5
+
+Odoo data CSVs support a `field@lang` column: `name` holds the English source
+and `name@ar_001` the Arabic, imported as a translation rather than a second
+record (`odoo/tools/translate.py::CSVDataFileReader`). That is the cheap path
+for translating the catalogue — no `.po` round-trip for data records. Template
+strings still go through the normal export/translate/reimport cycle.
+
+---
+
 ## Phase 0 — Repo and local stack
 
 **Goal:** `docker compose up` gives a working Odoo with the addon hot-reloading.

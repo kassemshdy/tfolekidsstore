@@ -1,29 +1,41 @@
 {
     'name': 'Tfole Store',
-    'version': '19.0.0.1.0',
+    'version': '19.0.1.0.0',
     'category': 'Website/Website',
-    'summary': 'Arabic-first storefront for Tfole',
+    'summary': 'Custom storefront for Tfole',
     'author': 'Tfole',
     'website': 'https://tfole.store',
     'license': 'LGPL-3',
 
-    # PHASE 0 PLACEHOLDER.
-    #
-    # Odoo 19 refuses an addons directory that contains no module with both
-    # __init__.py and __manifest__.py (odoo/tools/config.py::_is_addons_path),
-    # so /mnt/extra-addons is skipped entirely until this file exists. This
-    # manifest is the minimum that makes the bind mount valid and `make
-    # upgrade` meaningful.
-    #
-    # Phase 1 replaces it with the real thing: depends on website_sale and
-    # declares the three asset bundles documented in CLAUDE.md.
     'depends': [
         'website',
+        'website_sale',
     ],
 
+    # Categories before products (products reference them by external ID),
+    # products before images (the image records update rows the CSV created).
     'data': [
+        'data/product.public.category.csv',
+        'data/product.template.csv',
+        'data/product_images.xml',
+        'data/website_config.xml',
         'views/dev_smoke.xml',
     ],
+
+    # Three layers, loaded in this order. See CLAUDE.md for what belongs where.
+    # The files are deliberately near-empty at Phase 1: this phase declares the
+    # pipeline, Phase 2 fills it with the brand.
+    'assets': {
+        'web._assets_primary_variables': [
+            'website_tfole/static/src/scss/primary_variables.scss',
+        ],
+        'web._assets_frontend_helpers': [
+            ('prepend', 'website_tfole/static/src/scss/bootstrap_overridden.scss'),
+        ],
+        'web.assets_frontend': [
+            'website_tfole/static/src/scss/theme.scss',
+        ],
+    },
 
     'installable': True,
     'application': False,

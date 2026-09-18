@@ -1,0 +1,7 @@
+// Bootstrap internals the primary-variables layer cannot reach.
+//
+// Prepended to web._assets_frontend_helpers so it lands ahead of Bootstrap's
+// own helper definitions.
+//
+// Reach for this only when primary_variables.scss genuinely cannot express the
+// change. Empty until Phase 2 proves something needs it.

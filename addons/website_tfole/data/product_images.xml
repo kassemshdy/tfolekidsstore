@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Product images.
+
+        CSV cannot carry a binary, so the catalogue is split: names, prices and
+        categories live in product.template.csv, images live here and update the
+        rows that CSV already created. Keep this file loaded AFTER the CSV in
+        __manifest__.py or these records create half-empty products.
+
+        Replacing an image is a file swap plus "make upgrade" - these records are
+        not noupdate, so the file always wins.
+    -->
+
+    <record id="product_stacking_rings" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/stacking_rings.png"/>
+    </record>
+
+    <record id="product_shape_sorter" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/shape_sorter.png"/>
+    </record>
+
+    <record id="product_farm_puzzle" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/farm_puzzle.png"/>
+    </record>
+
+    <record id="product_alphabet_puzzle" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/alphabet_puzzle.png"/>
+    </record>
+
+    <record id="product_first_stories" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/first_stories.png"/>
+    </record>
+
+    <record id="product_bedtime_tales" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/bedtime_tales.png"/>
+    </record>
+
+    <record id="product_crayon_set" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/crayon_set.png"/>
+    </record>
+
+    <record id="product_finger_paint" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/finger_paint.png"/>
+    </record>
+
+</odoo>

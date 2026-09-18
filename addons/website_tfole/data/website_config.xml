@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--
+        Company and website identity.
+
+        noupdate="1" on purpose: these are settings an operator edits in the UI
+        (Settings > Website), and a plain data file would silently overwrite
+        those edits on every "make upgrade". Set once at install; to re-apply
+        this file after changing it, run "make reinit".
+
+        Product data is the opposite case and is NOT noupdate - see
+        product_images.xml.
+    -->
+
+    <record id="base.main_company" model="res.company">
+        <field name="name">Tfole</field>
+        <field name="country_id" ref="base.lb"/>
+
+        <!--
+            USD only, pinned explicitly rather than left to the default.
+            base.lb carries currency_id = LBP, so anything that later derives a
+            currency from the company country would flip pricing to Lebanese
+            pounds. Pricing is USD; there is no LBP pricelist by decision.
+        -->
+        <field name="currency_id" ref="base.USD"/>
+
+        <!-- TODO(Tfole): real values needed before launch. -->
+        <!-- <field name="street">...</field> -->
+        <!-- <field name="city">...</field> -->
+        <!-- <field name="phone">...</field> -->
+        <!-- <field name="email">...</field> -->
+    </record>
+
+    <record id="website.default_website" model="website">
+        <field name="name">Tfole</field>
+        <field name="company_id" ref="base.main_company"/>
+
+        <!--
+            TODO(Tfole): social handles and favicon.
+
+            Deliberately not filled with invented values - a guessed handle
+            points the whole storefront at somebody else's account. Supply the
+            real ones and uncomment:
+
+            <field name="social_instagram">https://www.instagram.com/...</field>
+            <field name="social_facebook">https://www.facebook.com/...</field>
+            <field name="social_tiktok">https://www.tiktok.com/@...</field>
+            <field name="favicon" type="base64" file="website_tfole/static/img/favicon.png"/>
+        -->
+    </record>
+
+</odoo>

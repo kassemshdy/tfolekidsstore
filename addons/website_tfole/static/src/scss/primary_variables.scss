@@ -1,0 +1,9 @@
+// Brand palette, fonts, radii and spacing.
+//
+// Injected into web._assets_primary_variables, which Odoo reads BEFORE it
+// compiles Bootstrap. A variable changed here restyles the entire site,
+// including components no custom template ever touches. That is the point:
+// prefer setting a variable here over writing a rule in theme.scss.
+//
+// Phase 1 declares the layer and leaves it empty on purpose. Phase 2 fills it
+// with the real palette and self-hosted font families.

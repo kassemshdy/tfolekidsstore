@@ -1,0 +1,6 @@
+id,name,sequence,parent_id/id
+categ_toys,Toys,10,
+categ_toys_wooden,Wooden Toys,11,website_tfole.categ_toys
+categ_toys_puzzles,Puzzles & Games,12,website_tfole.categ_toys
+categ_books,Books,20,
+categ_crafts,Arts & Crafts,30,
