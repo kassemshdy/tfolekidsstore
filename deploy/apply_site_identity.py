@@ -25,6 +25,7 @@ from odoo.tools import file_open
 _logger = logging.getLogger('tfole.identity')
 
 ODOO_DEFAULT_PHONE = '+1 555-555-5556'
+ODOO_DEFAULT_TEL_HREF = 'tel:+1 555-555-5556'
 ODOO_DEFAULT_HOMEPAGE_DESCRIPTION = 'This is the homepage of the website'
 
 HOMEPAGE_DESCRIPTION = (
@@ -136,6 +137,48 @@ def set_company_phone(env):
     _logger.info("company phone set")
 
 
+def set_contact_details(env):
+    """Put the real phone in the footer, the contact page and the header.
+
+    Odoo hardcodes "+1 555-555-5556" as literal text in its footer, contact and
+    header templates - it is not bound to res_company.phone, which is why
+    setting the company record changed nothing on the page.
+
+    The replacement is keyed on that exact placeholder string, so it is
+    self-limiting: once a real number is in place the string is gone and this
+    becomes a no-op. It never touches a number somebody typed themselves.
+
+    Snippet templates are included deliberately, so a Contact Info block
+    dropped in later also carries the right number.
+    """
+    phone = os.environ.get('TFOLE_COMPANY_PHONE')
+    if not phone:
+        return
+
+    # tel: wants a dialable string with no spaces; the visible text keeps the
+    # readable grouping.
+    dial = 'tel:' + '+' + ''.join(ch for ch in phone if ch.isdigit())
+
+    env.cr.execute(
+        "SELECT id FROM ir_ui_view WHERE arch_db::text LIKE %s",
+        ('%' + ODOO_DEFAULT_PHONE + '%',),
+    )
+    view_ids = [row[0] for row in env.cr.fetchall()]
+    if not view_ids:
+        return
+
+    changed = 0
+    for view in env['ir.ui.view'].sudo().browse(view_ids).exists():
+        arch = view.arch
+        if ODOO_DEFAULT_PHONE not in arch:
+            continue
+        new_arch = arch.replace(ODOO_DEFAULT_TEL_HREF, dial).replace(ODOO_DEFAULT_PHONE, phone)
+        view.arch = new_arch
+        changed += 1
+
+    _logger.info("phone placeholder replaced in %s view(s)", changed)
+
+
 def set_homepage_description(env):
     """Replace Odoo's stock homepage description, which was the og:description."""
     page = env['website.page'].search([('url', '=', '/')], limit=1)
@@ -161,6 +204,7 @@ def main(env):
         ('public url', set_public_url),
         ('brand assets', set_brand_assets),
         ('company phone', set_company_phone),
+        ('contact details', set_contact_details),
         ('homepage description', set_homepage_description),
     )
     for label, step in steps:

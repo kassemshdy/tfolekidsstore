@@ -24,10 +24,11 @@
         -->
         <field name="currency_id" ref="base.USD"/>
 
-        <!-- TODO(Tfole): real values needed before launch. -->
+        <field name="phone">+961 71 203 505</field>
+
+        <!-- TODO(Tfole): still needed before launch. -->
         <!-- <field name="street">...</field> -->
         <!-- <field name="city">...</field> -->
-        <!-- <field name="phone">...</field> -->
         <!-- <field name="email">...</field> -->
     </record>
 
