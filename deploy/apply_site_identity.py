@@ -20,6 +20,7 @@ Reads:
 import base64
 import logging
 import os
+import re
 
 from odoo.tools import file_open
 
@@ -211,6 +212,76 @@ def set_contact_details(env):
     _logger.info("contact placeholders replaced in %s view(s)", changed)
 
 
+# Odoo's stock footer copy, matched as patterns rather than literal strings.
+# An exact-string match failed here once already: the stored arch wraps the
+# paragraph with a newline and indentation before the <br/>, which no
+# hand-written constant is going to reproduce reliably.
+ODOO_DEFAULT_ABOUT_RE = re.compile(
+    r"<p>\s*We are a team of passionate people.*?</p>", re.DOTALL
+)
+
+TFOLE_ABOUT = (
+    "<p>Tfole makes screen-free audio players and real-play kits for kids. "
+    "Stories to listen to, adventures to live, and a box of things to do with "
+    "your hands.<br/><br/>More childhood. Less screen.</p>"
+)
+
+# The stock "Useful Links" list. Four of its six entries are href="#", which
+# are dead links on a live site.
+ODOO_DEFAULT_LINKS_RE = re.compile(
+    r'<li><a href="/">Home</a></li>\s*'
+    r'<li><a href="#">About us</a></li>\s*'
+    r'<li><a href="#">Products</a></li>\s*'
+    r'<li><a href="#">Services</a></li>\s*'
+    r'<li><a href="#">Legal</a></li>',
+    re.DOTALL,
+)
+
+
+def _category_url(env, xmlid):
+    """Resolve a shop category URL, or fall back to /shop.
+
+    Category ids differ per database, so the URL is built from the record
+    rather than written down - the same mistake that 404'd the homepage
+    buttons.
+    """
+    categ = env.ref(xmlid, raise_if_not_found=False)
+    if not categ:
+        return '/shop'
+    return '/shop/category/' + env['ir.http']._slug(categ)
+
+
+def set_footer_copy(env):
+    """Replace Odoo's stock About text and dead Useful Links.
+
+    The footer is an oe_structure whose contents live in a stored view, so
+    this edits that view rather than a template. Guarded on the exact stock
+    strings, so an operator's own copy is never overwritten.
+    """
+    view = env.ref('website.footer_custom', raise_if_not_found=False)
+    if not view:
+        return
+
+    arch = view.arch
+    new_arch = ODOO_DEFAULT_ABOUT_RE.sub(lambda _m: TFOLE_ABOUT, arch)
+
+    if ODOO_DEFAULT_LINKS_RE.search(new_arch):
+        links = [
+            ('/', 'Home'),
+            ('/shop', 'Shop'),
+            (_category_url(env, 'website_tfole.categ_tfole_audio'), 'The Player'),
+            (_category_url(env, 'website_tfole.categ_tfole_box'), 'The Activity Kit'),
+        ]
+        replacement = '\n                                '.join(
+            f'<li><a href="{href}">{label}</a></li>' for href, label in links
+        )
+        new_arch = ODOO_DEFAULT_LINKS_RE.sub(lambda _m: replacement, new_arch)
+
+    if new_arch != arch:
+        view.arch = new_arch
+        _logger.info("footer copy replaced")
+
+
 def set_homepage_description(env):
     """Replace Odoo's stock homepage description, which was the og:description."""
     page = env['website.page'].search([('url', '=', '/')], limit=1)
@@ -237,6 +308,7 @@ def main(env):
         ('brand assets', set_brand_assets),
         ('company contact', set_company_contact),
         ('contact details', set_contact_details),
+        ('footer copy', set_footer_copy),
         ('homepage description', set_homepage_description),
     )
     for label, step in steps:
