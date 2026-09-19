@@ -25,11 +25,11 @@
         <field name="currency_id" ref="base.USD"/>
 
         <field name="phone">+961 71 203 505</field>
+        <field name="email">infor@tfolekids.com</field>
 
         <!-- TODO(Tfole): still needed before launch. -->
         <!-- <field name="street">...</field> -->
         <!-- <field name="city">...</field> -->
-        <!-- <field name="email">...</field> -->
     </record>
 
     <record id="website.default_website" model="website">

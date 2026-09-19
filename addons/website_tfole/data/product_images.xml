@@ -101,4 +101,12 @@
         <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_play_ball.png"/>
     </record>
 
+    <record id="product_cards_move" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_move.png"/>
+    </record>
+
+    <record id="product_cards_screens" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_screens.png"/>
+    </record>
+
 </odoo>

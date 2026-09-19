@@ -13,6 +13,7 @@ first created. The logo, favicon and phone all fell into that gap.
 Reads:
   ODOO_ADMIN_LOGIN_PASSWORD  new password for the `admin` user
   TFOLE_COMPANY_PHONE        company phone, also used for the WhatsApp link
+  TFOLE_COMPANY_EMAIL        public contact address
   TFOLE_PUBLIC_URL           public base URL, e.g. https://store.tfolekids.com
 """
 
@@ -26,6 +27,18 @@ _logger = logging.getLogger('tfole.identity')
 
 ODOO_DEFAULT_PHONE = '+1 555-555-5556'
 ODOO_DEFAULT_TEL_HREF = 'tel:+1 555-555-5556'
+
+# Odoo's placeholder addresses that stand in for the COMPANY's own email.
+# Both appear in the footer, the contact page and the contact form's
+# recipient field, so a form submission to the second one goes nowhere.
+#
+# Deliberately NOT listed: name@example.com, which is the hint text inside the
+# signup form's email input. That is an example for the visitor to replace, not
+# the company's address, and rewriting it would be wrong.
+ODOO_DEFAULT_EMAILS = (
+    'info@yourcompany.example.com',
+    'yourcompany@example.com',
+)
 ODOO_DEFAULT_HOMEPAGE_DESCRIPTION = 'This is the homepage of the website'
 
 HOMEPAGE_DESCRIPTION = (
@@ -123,18 +136,24 @@ def set_brand_assets(env):
         _logger.info("social_default_image set to the 1200x630 brand card")
 
 
-def set_company_phone(env):
-    phone = os.environ.get('TFOLE_COMPANY_PHONE')
-    if not phone:
-        return
+def set_company_contact(env):
     company = env.ref('base.main_company', raise_if_not_found=False)
     if not company:
         return
-    current = (company.phone or '').strip()
-    if current and current != ODOO_DEFAULT_PHONE:
-        return
-    company.phone = phone
-    _logger.info("company phone set")
+
+    phone = os.environ.get('TFOLE_COMPANY_PHONE')
+    if phone:
+        current = (company.phone or '').strip()
+        if not current or current == ODOO_DEFAULT_PHONE:
+            company.phone = phone
+            _logger.info("company phone set")
+
+    email = os.environ.get('TFOLE_COMPANY_EMAIL')
+    if email:
+        current = (company.email or '').strip()
+        if not current or current in ODOO_DEFAULT_EMAILS:
+            company.email = email
+            _logger.info("company email set")
 
 
 def set_contact_details(env):
@@ -152,31 +171,44 @@ def set_contact_details(env):
     dropped in later also carries the right number.
     """
     phone = os.environ.get('TFOLE_COMPANY_PHONE')
-    if not phone:
+    email = os.environ.get('TFOLE_COMPANY_EMAIL')
+    if not phone and not email:
         return
 
-    # tel: wants a dialable string with no spaces; the visible text keeps the
-    # readable grouping.
-    dial = 'tel:' + '+' + ''.join(ch for ch in phone if ch.isdigit())
+    # Build the list of literal substitutions to apply to view archs.
+    swaps = []
+    if phone:
+        # tel: wants a dialable string with no spaces; the visible text keeps
+        # the readable grouping.
+        dial = 'tel:' + '+' + ''.join(ch for ch in phone if ch.isdigit())
+        swaps.append((ODOO_DEFAULT_TEL_HREF, dial))
+        swaps.append((ODOO_DEFAULT_PHONE, phone))
+    if email:
+        for placeholder in ODOO_DEFAULT_EMAILS:
+            swaps.append((placeholder, email))
 
-    env.cr.execute(
-        "SELECT id FROM ir_ui_view WHERE arch_db::text LIKE %s",
-        ('%' + ODOO_DEFAULT_PHONE + '%',),
-    )
-    view_ids = [row[0] for row in env.cr.fetchall()]
+    needles = {old for old, _ in swaps}
+    view_ids = set()
+    for needle in needles:
+        env.cr.execute(
+            "SELECT id FROM ir_ui_view WHERE arch_db::text LIKE %s",
+            ('%' + needle + '%',),
+        )
+        view_ids.update(row[0] for row in env.cr.fetchall())
     if not view_ids:
         return
 
     changed = 0
-    for view in env['ir.ui.view'].sudo().browse(view_ids).exists():
+    for view in env['ir.ui.view'].sudo().browse(sorted(view_ids)).exists():
         arch = view.arch
-        if ODOO_DEFAULT_PHONE not in arch:
-            continue
-        new_arch = arch.replace(ODOO_DEFAULT_TEL_HREF, dial).replace(ODOO_DEFAULT_PHONE, phone)
-        view.arch = new_arch
-        changed += 1
+        new_arch = arch
+        for old, new in swaps:
+            new_arch = new_arch.replace(old, new)
+        if new_arch != arch:
+            view.arch = new_arch
+            changed += 1
 
-    _logger.info("phone placeholder replaced in %s view(s)", changed)
+    _logger.info("contact placeholders replaced in %s view(s)", changed)
 
 
 def set_homepage_description(env):
@@ -203,7 +235,7 @@ def main(env):
         ('admin password', rotate_admin_password),
         ('public url', set_public_url),
         ('brand assets', set_brand_assets),
-        ('company phone', set_company_phone),
+        ('company contact', set_company_contact),
         ('contact details', set_contact_details),
         ('homepage description', set_homepage_description),
     )
