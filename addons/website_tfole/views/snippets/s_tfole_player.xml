@@ -13,9 +13,9 @@
                             pictures to the child. Slot in a card and the story starts.
                             No display, nothing to swipe.
                         </p>
-                        <a href="/shop/category/tfole-originals-audio-player-cards-2" class="btn btn-primary btn-lg">
-                            See the player range
-                        </a>
+                                                <t t-set="categ" t-value="request.env.ref('website_tfole.categ_tfole_audio', raise_if_not_found=False)"/>
+                        <a t-att-href="categ and ('/shop/category/' + request.env['ir.http']._slug(categ)) or '/shop'"
+                           class="btn btn-primary btn-lg">See the player range</a>
                     </div>
                     <div class="col-lg-6">
                         <img src="/website_tfole/static/src/img/photos/full-player-family.jpg"

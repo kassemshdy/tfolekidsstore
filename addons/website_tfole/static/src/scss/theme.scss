@@ -283,3 +283,35 @@
     max-block-size: 2.75rem;
     inline-size: auto;
 }
+
+// --- Homepage: topics and kit contents --------------------------------------
+
+.s_tfole_topics {
+    .o_tfole_topic i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        inline-size: 3.25rem;
+        block-size: 3.25rem;
+        border-radius: 50%;
+        background-color: $tfole-yellow-100;
+        color: $tfole-brown;
+        font-size: 1.35rem;
+    }
+}
+
+.o_tfole_inside_card {
+    background-color: #FFFFFF;
+    border-radius: $border-radius-lg;
+    padding: 1rem;
+    block-size: 100%;
+    text-align: center;
+    box-shadow: $box-shadow-sm;
+
+    img {
+        border-radius: $border-radius;
+        aspect-ratio: 1;
+        object-fit: cover;
+        inline-size: 100%;
+    }
+}

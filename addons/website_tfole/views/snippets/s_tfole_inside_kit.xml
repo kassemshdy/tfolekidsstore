@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_inside_kit" name="Inside the Kit">
+        <!--
+            Replaces the old "Screen-free moments" strip, which rendered four
+            empty placeholder squares because there is no customer photography
+            yet. This shows real contents instead, using the kit photographs.
+        -->
+        <section class="s_tfole_inside_kit o_tfole_section_cream pt48 pb48"
+                 data-snippet="s_tfole_inside_kit" data-name="Inside the Kit">
+            <div class="container">
+                <p class="o_tfole_eyebrow text-center">Inside the box</p>
+                <h2 class="text-center mb-5">Everything that comes with it</h2>
+                <div class="row g-4">
+                    <div class="col-6 col-lg-3">
+                        <div class="o_tfole_inside_card">
+                            <img src="/website_tfole/static/src/img/photos/game-board.jpg"
+                                 alt="Tfole Adventure game board" class="img img-fluid"/>
+                            <h3 class="h6 mt-3 mb-0">The board game</h3>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="o_tfole_inside_card">
+                            <img src="/website_tfole/static/src/img/photos/card-decks.jpg"
+                                 alt="Move, Create, Explore, Friends and Kindness card decks"
+                                 class="img img-fluid"/>
+                            <h3 class="h6 mt-3 mb-0">Five card decks</h3>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="o_tfole_inside_card">
+                            <img src="/website_tfole/static/src/img/photos/character-standees.jpg"
+                                 alt="Taba, Ta Fole and Soso character standees" class="img img-fluid"/>
+                            <h3 class="h6 mt-3 mb-0">Character standees</h3>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="o_tfole_inside_card">
+                            <img src="/website_tfole/static/src/img/photos/drawstring-bag.jpg"
+                                 alt="Tfole drawstring bag" class="img img-fluid"/>
+                            <h3 class="h6 mt-3 mb-0">Carry bag</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

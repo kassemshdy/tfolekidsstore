@@ -28,6 +28,8 @@
         'views/snippets/s_tfole_highlight.xml',
         'views/snippets/s_tfole_player.xml',
         'views/snippets/s_tfole_kit.xml',
+        'views/snippets/s_tfole_topics.xml',
+        'views/snippets/s_tfole_inside_kit.xml',
         'views/snippets/s_tfole_characters.xml',
         'views/snippets/s_tfole_ugc.xml',
         'views/snippets/s_tfole_contact_cta.xml',

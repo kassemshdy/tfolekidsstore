@@ -19,9 +19,15 @@
 
             <t t-call="website_tfole.s_tfole_hero"/>
 
+            <!-- What the player actually plays, before the hardware. -->
+            <t t-call="website_tfole.s_tfole_topics"/>
+
             <!-- The two product lines, each with its own section. -->
             <t t-call="website_tfole.s_tfole_player"/>
             <t t-call="website_tfole.s_tfole_kit"/>
+
+            <!-- Real kit contents, in place of the empty customer-photo strip. -->
+            <t t-call="website_tfole.s_tfole_inside_kit"/>
 
             <t t-call="website_tfole.s_tfole_characters"/>
 
@@ -56,9 +62,6 @@
             </section>
 
             <t t-call="website_tfole.s_tfole_age_finder"/>
-
-            <!-- Moments. -->
-            <t t-call="website_tfole.s_tfole_ugc"/>
 
             <t t-call="website_tfole.s_tfole_faq"/>
 

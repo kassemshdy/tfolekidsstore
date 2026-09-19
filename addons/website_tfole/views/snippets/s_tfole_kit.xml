@@ -13,9 +13,9 @@
                             standees and a parents guide. Move, create, explore,
                             connect, be kind, with nothing to charge.
                         </p>
-                        <a href="/shop/category/tfole-originals-activity-box-3" class="btn btn-primary btn-lg">
-                            See what is in the kit
-                        </a>
+                                                <t t-set="categ" t-value="request.env.ref('website_tfole.categ_tfole_box', raise_if_not_found=False)"/>
+                        <a t-att-href="categ and ('/shop/category/' + request.env['ir.http']._slug(categ)) or '/shop'"
+                           class="btn btn-primary btn-lg">See what is in the kit</a>
                     </div>
                     <div class="col-lg-6">
                         <img src="/website_tfole/static/src/img/photos/full-kit.jpg"

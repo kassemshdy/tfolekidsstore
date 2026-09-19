@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_topics" name="What's on the Cards">
+        <!--
+            The five content categories the brand already uses on its own
+            packaging: stories, Quran, learning, music, movement. Taken from
+            Tfole's artwork rather than invented, so the site and the box say
+            the same thing.
+        -->
+        <section class="s_tfole_topics pt40 pb40" data-snippet="s_tfole_topics" data-name="What's on the Cards">
+            <div class="container">
+                <p class="o_tfole_eyebrow text-center">What's on the cards</p>
+                <h2 class="text-center mb-5">Five kinds of listening</h2>
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-lg">
+                        <div class="o_tfole_topic">
+                            <i class="fa fa-book" aria-hidden="true"/>
+                            <h3 class="h6 mt-3 mb-1">Stories &amp; Adventures</h3>
+                            <p class="text-muted small mb-0">Tales that leave room to imagine.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <div class="o_tfole_topic">
+                            <i class="fa fa-moon-o" aria-hidden="true"/>
+                            <h3 class="h6 mt-3 mb-1">Quran &amp; Islamic Content</h3>
+                            <p class="text-muted small mb-0">Told at a pace young listeners follow.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <div class="o_tfole_topic">
+                            <i class="fa fa-lightbulb-o" aria-hidden="true"/>
+                            <h3 class="h6 mt-3 mb-1">Learning &amp; Life Skills</h3>
+                            <p class="text-muted small mb-0">The small things that add up.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <div class="o_tfole_topic">
+                            <i class="fa fa-music" aria-hidden="true"/>
+                            <h3 class="h6 mt-3 mb-1">Music &amp; Relaxation</h3>
+                            <p class="text-muted small mb-0">For winding down, not winding up.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg">
+                        <div class="o_tfole_topic">
+                            <i class="fa fa-child" aria-hidden="true"/>
+                            <h3 class="h6 mt-3 mb-1">Movement &amp; Activities</h3>
+                            <p class="text-muted small mb-0">Play that needs a body.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>
