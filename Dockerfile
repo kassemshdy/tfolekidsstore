@@ -15,6 +15,7 @@ COPY ./addons /mnt/extra-addons
 # module changes, then serves - see the script for why it is done at start
 # rather than in a Railway pre-deploy command.
 COPY ./deploy/start.sh /usr/local/bin/tfole-start
+COPY ./deploy/apply_site_identity.py /usr/local/bin/tfole-apply-site-identity
 RUN chmod +x /usr/local/bin/tfole-start \
  && chown -R odoo:odoo /mnt/extra-addons
 

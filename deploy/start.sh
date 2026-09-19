@@ -91,5 +91,12 @@ odoo --config="$CONF" \
      -i website_tfole -u website_tfole \
      --stop-after-init
 
+echo "[tfole] applying site identity"
+# Guarded, idempotent fixes for things a noupdate data file cannot deliver to
+# an existing database. See deploy/apply_site_identity.py.
+odoo shell --config="$CONF" --database="$PGDATABASE" --no-http \
+    < /usr/local/bin/tfole-apply-site-identity || \
+    echo "[tfole] WARNING: site identity step failed; continuing to serve"
+
 echo "[tfole] starting Odoo on port ${PORT}"
 exec odoo --config="$CONF" --http-port="$PORT"
