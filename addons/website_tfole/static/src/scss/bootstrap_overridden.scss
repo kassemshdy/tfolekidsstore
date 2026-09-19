@@ -17,9 +17,9 @@ $border-radius-xl: 1.5rem;
 
 // Softer, warmer shadows than Bootstrap's neutral grey. Tinted with the ink
 // colour so they sit on the warm palette instead of greying it down.
-$box-shadow-sm: 0 .125rem .5rem rgba(42, 30, 22, .07);
-$box-shadow:    0 .5rem 1.5rem rgba(42, 30, 22, .10);
-$box-shadow-lg: 0 1rem 3rem rgba(42, 30, 22, .13);
+$box-shadow-sm: 0 .125rem .5rem rgba(74, 48, 24, .07);
+$box-shadow:    0 .5rem 1.5rem rgba(74, 48, 24, .10);
+$box-shadow-lg: 0 1rem 3rem rgba(74, 48, 24, .13);
 
 // Slightly tighter headings than Bootstrap's default cascade, so product
 // titles do not shout on a phone.
@@ -29,4 +29,4 @@ $headings-font-weight: 600;
 // this is a visible-focus affordance, so it stays clearly visible.
 $focus-ring-width: .25rem;
 $focus-ring-opacity: .35;
-$focus-ring-color: rgba(198, 63, 22, .35);
+$focus-ring-color: rgba(240, 168, 32, .45);

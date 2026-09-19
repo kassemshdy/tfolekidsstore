@@ -24,6 +24,9 @@
             <t t-snippet="website_tfole.s_tfole_highlight" string="Product Highlight" group="catalog"
                t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_highlight.svg"/>
 
+            <t t-snippet="website_tfole.s_tfole_characters" string="Tfole Characters" group="people"
+               t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_characters.svg"/>
+
             <t t-snippet="website_tfole.s_tfole_ugc" string="Customer Photos" group="people"
                t-thumbnail="/website_tfole/static/src/img/snippets/s_tfole_ugc.svg"/>
 

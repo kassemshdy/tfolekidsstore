@@ -6,17 +6,17 @@
             <div class="container">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6">
-                        <img src="/website_tfole/static/src/img/snippets/hero_placeholder.png"
+                        <img src="/website_tfole/static/src/img/brand/player.jpg"
                              alt="" class="img img-fluid rounded-4 w-100"/>
                     </div>
                     <div class="col-lg-6">
-                        <span class="o_tfole_age_badge">Staff pick</span>
-                        <h2 class="mt-2">A toy worth the shelf space</h2>
+                        <span class="o_tfole_age_badge">The player</span>
+                        <h2 class="mt-2">Hear the story. Finish it yourself.</h2>
                         <p>
-                            Say why this one earns its place. What it is made of,
-                            what a child actually does with it, how long it lasts.
+                            The Tfole player puts sound at the centre and leaves the
+                            pictures to the child. Slot in a card, and the story starts.
                         </p>
-                        <a href="/shop" class="btn btn-primary">See the product</a>
+                        <a href="/shop" class="btn btn-primary">See the player</a>
                     </div>
                 </div>
             </div>

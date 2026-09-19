@@ -1,47 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <!--
         Product images.
 
-        CSV cannot carry a binary, so the catalogue is split: names, prices and
-        categories live in product.template.csv, images live here and update the
-        rows that CSV already created. Keep this file loaded AFTER the CSV in
-        __manifest__.py or these records create half-empty products.
-
-        Replacing an image is a file swap plus "make upgrade" - these records are
-        not noupdate, so the file always wins.
+        These are brand-coloured PLACEHOLDER tiles, not photography. Swap the
+        files in static/src/img/products/ and run make upgrade; these records
+        are not noupdate, so the file always wins.
     -->
 
-    <record id="product_stacking_rings" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/stacking_rings.png"/>
+    <record id="product_player" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_player.png"/>
     </record>
 
-    <record id="product_shape_sorter" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/shape_sorter.png"/>
+    <record id="product_mini_player" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_mini_player.png"/>
     </record>
 
-    <record id="product_farm_puzzle" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/farm_puzzle.png"/>
+    <record id="product_headphones" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_headphones.png"/>
     </record>
 
-    <record id="product_alphabet_puzzle" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/alphabet_puzzle.png"/>
+    <record id="product_carry_case" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_carry_case.png"/>
     </record>
 
-    <record id="product_first_stories" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/first_stories.png"/>
+    <record id="product_cards_bedtime" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_bedtime.png"/>
     </record>
 
-    <record id="product_bedtime_tales" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/bedtime_tales.png"/>
+    <record id="product_cards_quran" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_quran.png"/>
     </record>
 
-    <record id="product_crayon_set" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/crayon_set.png"/>
+    <record id="product_cards_nature" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_nature.png"/>
     </record>
 
-    <record id="product_finger_paint" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/finger_paint.png"/>
+    <record id="product_cards_animals" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_animals.png"/>
+    </record>
+
+    <record id="product_activity_box" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_activity_box.png"/>
+    </record>
+
+    <record id="product_adventure_game" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_adventure_game.png"/>
+    </record>
+
+    <record id="product_move_cards" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_move_cards.png"/>
+    </record>
+
+    <record id="product_kindness_cards" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_kindness_cards.png"/>
+    </record>
+
+    <record id="product_uno" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_uno.png"/>
+    </record>
+
+    <record id="product_monopoly_junior" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_monopoly_junior.png"/>
+    </record>
+
+    <record id="product_dominoes" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_dominoes.png"/>
+    </record>
+
+    <record id="product_memory_game" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_memory_game.png"/>
+    </record>
+
+    <record id="product_kids_planner" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_kids_planner.png"/>
+    </record>
+
+    <record id="product_gratitude_journal" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_gratitude_journal.png"/>
+    </record>
+
+    <record id="product_reward_chart" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_reward_chart.png"/>
+    </record>
+
+    <record id="product_pencils" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_pencils.png"/>
+    </record>
+
+    <record id="product_sticker_pack" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_sticker_pack.png"/>
+    </record>
+
+    <record id="product_jump_rope" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_jump_rope.png"/>
+    </record>
+
+    <record id="product_play_ball" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_play_ball.png"/>
     </record>
 
 </odoo>

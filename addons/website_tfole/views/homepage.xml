@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Homepage.
+
+        Structure mirrors tfolekids.com: hero, the player, the characters, the
+        movement, moments, questions, closing. Same flow, storefront content.
+
+        #wrap is an oe_structure, so the editor owns it once anyone saves a
+        change there. This inheritance provides the starting content; it is not
+        a lock. If the operator rearranges the page in the editor, Odoo copies
+        the view for this website and their version wins - which is the right
+        outcome.
+    -->
+
+    <template id="homepage" inherit_id="website.homepage" name="Tfole: homepage">
+        <xpath expr="//div[@id='wrap']" position="inside">
+
+            <t t-call="website_tfole.s_tfole_hero"/>
+
+            <!-- From the story to the game: the player. -->
+            <t t-call="website_tfole.s_tfole_highlight"/>
+
+            <t t-call="website_tfole.s_tfole_characters"/>
+
+            <!-- Our movement: what the brand is actually for. -->
+            <section class="s_tfole_values o_tfole_section_cream pt48 pb48"
+                     data-snippet="s_tfole_values" data-name="Our Movement">
+                <div class="container">
+                    <p class="o_tfole_eyebrow text-center">Our movement</p>
+                    <h2 class="text-center mb-2">A childhood beyond the screen</h2>
+                    <p class="text-center text-muted mb-5">
+                        More time moving. More room to imagine. Better moments together.
+                    </p>
+                    <div class="row g-4 text-center">
+                        <div class="col-6 col-lg-3">
+                            <h3 class="h6 text-uppercase mb-1">Move</h3>
+                            <p class="text-muted mb-0">Play that needs a body, not a battery.</p>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <h3 class="h6 text-uppercase mb-1">Create</h3>
+                            <p class="text-muted mb-0">A cardboard box is still the best toy.</p>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <h3 class="h6 text-uppercase mb-1">Explore</h3>
+                            <p class="text-muted mb-0">Stories that send them looking outside.</p>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <h3 class="h6 text-uppercase mb-1">Connect</h3>
+                            <p class="text-muted mb-0">Time together that nobody scrolls through.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <t t-call="website_tfole.s_tfole_age_finder"/>
+
+            <!-- Moments. -->
+            <t t-call="website_tfole.s_tfole_ugc"/>
+
+            <t t-call="website_tfole.s_tfole_faq"/>
+
+            <t t-call="website_tfole.s_tfole_contact_cta"/>
+
+        </xpath>
+    </template>
+
+</odoo>

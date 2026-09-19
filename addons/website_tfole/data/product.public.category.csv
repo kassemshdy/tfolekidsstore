@@ -1,6 +1,10 @@
 id,name,sequence,parent_id/id
-categ_toys,Toys,10,
-categ_toys_wooden,Wooden Toys,11,website_tfole.categ_toys
-categ_toys_puzzles,Puzzles & Games,12,website_tfole.categ_toys
-categ_books,Books,20,
-categ_crafts,Arts & Crafts,30,
+categ_tfole,Tfole Originals,10,
+categ_tfole_audio,Audio Player & Cards,11,website_tfole.categ_tfole
+categ_tfole_box,Activity Box,12,website_tfole.categ_tfole
+categ_games,Games,20,
+categ_games_board,Board Games,21,website_tfole.categ_games
+categ_games_card,Card Games,22,website_tfole.categ_games
+categ_planners,Planners & Journals,30,
+categ_crafts,Arts & Crafts,40,
+categ_active,Active Play,50,

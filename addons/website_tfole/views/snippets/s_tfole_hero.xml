@@ -6,15 +6,15 @@
             <div class="container">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-7">
-                        <h1 class="o_tfole_hero_title">Play that lasts</h1>
+                        <h1 class="o_tfole_hero_title">More childhood.<br/>Less screen.</h1>
                         <p class="lead mb-4">
-                            Wooden toys, picture books and craft kits, chosen for
-                            small hands and long afternoons.
+                            Stories to listen to. Adventures to live. A screen-free
+                            audio player and a box of real play.
                         </p>
-                        <a href="/shop" class="btn btn-primary btn-lg">Shop everything</a>
+                        <a href="/shop" class="btn btn-primary btn-lg">Explore the shop</a>
                     </div>
                     <div class="col-lg-5">
-                        <img src="/website_tfole/static/src/img/snippets/hero_placeholder.png"
+                        <img src="/website_tfole/static/src/img/brand/hero-world.jpg"
                              alt="" class="img img-fluid rounded-4 w-100"/>
                     </div>
                 </div>

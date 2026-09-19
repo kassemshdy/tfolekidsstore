@@ -25,10 +25,12 @@
         'views/snippets/s_tfole_hero.xml',
         'views/snippets/s_tfole_age_finder.xml',
         'views/snippets/s_tfole_highlight.xml',
+        'views/snippets/s_tfole_characters.xml',
         'views/snippets/s_tfole_ugc.xml',
         'views/snippets/s_tfole_contact_cta.xml',
         'views/snippets/s_tfole_faq.xml',
         'views/snippets/snippets.xml',
+        'views/homepage.xml',
     ],
 
     # Three layers, loaded in this order. See CLAUDE.md for what belongs where.

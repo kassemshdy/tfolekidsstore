@@ -45,17 +45,19 @@
         <field name="shop_ppr">3</field>
         <field name="shop_ppg">24</field>
 
-        <!--
-            TODO(Tfole): social handles and favicon.
+        <!-- The real wordmark, cropped from the brand artwork with the
+             photographic backdrop removed. -->
+        <field name="logo" type="base64" file="website_tfole/static/src/img/brand/tfole-logo.png"/>
+        <field name="favicon" type="base64" file="website_tfole/static/src/img/brand/tfole-favicon.png"/>
 
-            Deliberately not filled with invented values - a guessed handle
-            points the whole storefront at somebody else's account. Supply the
-            real ones and uncomment:
+        <!--
+            TODO(Tfole): social handles still needed. Deliberately not filled
+            with invented values - a guessed handle points the whole storefront
+            at somebody else's account.
 
             <field name="social_instagram">https://www.instagram.com/...</field>
             <field name="social_facebook">https://www.facebook.com/...</field>
             <field name="social_tiktok">https://www.tiktok.com/@...</field>
-            <field name="favicon" type="base64" file="website_tfole/static/img/favicon.png"/>
         -->
     </record>
 

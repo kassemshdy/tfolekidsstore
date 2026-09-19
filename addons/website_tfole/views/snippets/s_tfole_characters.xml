@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_characters" name="Tfole Characters">
+        <!--
+            The three characters from the brand: the two who invite play, and
+            the one who does not. Artwork is the real brand art from
+            tfolekids.com, not invented.
+        -->
+        <section class="s_tfole_characters pt48 pb48"
+                 data-snippet="s_tfole_characters" data-name="Tfole Characters">
+            <div class="container">
+                <p class="o_tfole_eyebrow text-center">Companions for every adventure</p>
+                <h2 class="text-center mb-2">Meet the Tfole heroes</h2>
+                <p class="text-center text-muted mb-5">
+                    Three characters. One invitation: live it, don't just watch it.
+                </p>
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <img src="/website_tfole/static/src/img/brand/character-3.jpeg"
+                             alt="Ta Fole" class="o_tfole_character_img img img-fluid"/>
+                        <h3 class="h5 mt-3 mb-1">Ta Fole</h3>
+                        <p class="text-muted mb-0">Imagination and adventure. Turns the simplest thing into a game.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/website_tfole/static/src/img/brand/character-2.jpeg"
+                             alt="Taba" class="o_tfole_character_img img img-fluid"/>
+                        <h3 class="h5 mt-3 mb-1">Taba</h3>
+                        <p class="text-muted mb-0">Move, play, be active. Never sits still for long.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/website_tfole/static/src/img/brand/character-1.jpeg"
+                             alt="Soso the Screen" class="o_tfole_character_img img img-fluid"/>
+                        <h3 class="h5 mt-3 mb-1">Soso the Screen</h3>
+                        <p class="text-muted mb-0">Less screen, more life. The one we are all trying to put down.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

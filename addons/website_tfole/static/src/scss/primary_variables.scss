@@ -3,65 +3,55 @@
 // ============================================================================
 //
 // Injected into web._assets_primary_variables, which Odoo reads BEFORE it
-// compiles Bootstrap. Changing a value here restyles the whole site, including
-// components no custom template ever touches. Prefer editing this file over
-// writing a rule in theme.scss.
+// compiles Bootstrap. Changing a value here restyles the whole site.
 //
-// Contrast: every pairing below was checked against WCAG AA (4.5:1 for body
-// text, 3:1 for large/bold text and non-text UI). If you change a colour,
-// re-check it - the numbers in the comments are not decorative.
+// Colours are taken from the brand, not invented:
+//   - #FFCC24 is the yellow declared in tfolekids.com's own stylesheet.
+//   - The browns and the red are sampled from the logo wordmark and the
+//     mascot artwork in static/src/img/brand/.
+//
+// Contrast: every pairing below is checked against WCAG AA. The one rule that
+// matters most is that WHITE TEXT NEVER GOES ON THE BRAND YELLOW - it scores
+// 1.51:1, far below the 4.5:1 body text needs. The brand itself solves this:
+// the logo is yellow filled with dark brown, so brown-on-yellow is both the
+// accessible choice and the correct one. It scores 8.06:1.
 
-// --- Raw brand colours ------------------------------------------------------
+// --- Brand colours ----------------------------------------------------------
 
-// The brand orange. 3.60:1 on white, which is BELOW the 4.5:1 needed for body
-// text and for white button labels. So it is a decorative colour only:
-// large bold display text, borders, icons, illustration fills. Never a
-// background for normal-size text, in either direction.
-$tfole-orange:            #E8572A;
+$tfole-yellow:        #FFCC24;  // the brand yellow, from tfolekids.com
+$tfole-yellow-deep:   #F0A820;  // the device body; hover and depth
+$tfole-yellow-50:     #FFF6DC;  // pale wash for section backgrounds
+$tfole-yellow-100:    #FFEBB5;  // badges, chips
 
-// The interactive orange: same family, darkened until white text clears AA.
-// White on this is 5.09:1; as a link on white it is 5.09:1, on cream 4.77:1.
-$tfole-orange-interactive: #C63F16;
-$tfole-orange-hover:       #A8330F;  // white on this: 6.68:1
+// Dark brown is the ink. It carries all body text and every label that sits
+// on yellow. 12.16:1 on white, 7.06:1 on the brand yellow.
+$tfole-brown:         #4A3018;
+$tfole-brown-deep:    #601800;  // logo outline; links and emphasis
+$tfole-brown-muted:   #7A5C3A;  // secondary text, 6.14:1 on white
 
-// Orange tints. Safe as backgrounds for ink text (14.68:1 and 12.90:1).
-$tfole-orange-50:         #FFF1EA;
-$tfole-orange-100:        #FBE0D4;
+// Taba, the red character. Used sparingly as an accent.
+$tfole-red:           #C1272D;
 
-// Teal counterweight, so the site is not monochrome-orange.
-// White on this: 6.91:1. As a link on cream: 6.48:1.
-$tfole-teal:              #116466;
-
-// Warm neutrals.
-$tfole-cream:             #FFF6EF;  // light section background
-$tfole-sand:              #F2E7DC;  // footer, subtle fills
-$tfole-ink:               #2A1E16;  // body text. 16.21:1 on white
-$tfole-ink-muted:         #6B5648;  // secondary text. 6.89:1 on white
+$tfole-cream:         #FFFCF0;
+$tfole-sand:          #F8F0DC;
 
 // --- Odoo colour palette ----------------------------------------------------
-//
-// $o-user-color-palette is merged over the selected default palette, and drives
-// Odoo's colour combinations (o-cc1..o-cc5) throughout the frontend and the
-// editor's colour pickers.
 
 $o-user-color-palette: (
-    'o-color-1': $tfole-orange-interactive,  // primary: buttons, links
-    'o-color-2': $tfole-teal,                // secondary
-    'o-color-3': $tfole-cream,               // light section background
-    'o-color-4': #FFFFFF,                    // page background
-    'o-color-5': $tfole-ink,                 // dark / text
+    'o-color-1': $tfole-yellow,      // primary: brand yellow
+    'o-color-2': $tfole-brown-deep,  // secondary
+    'o-color-3': $tfole-cream,       // light section background
+    'o-color-4': #FFFFFF,            // page background
+    'o-color-5': $tfole-brown,       // dark / text
 );
 
 // --- Typography -------------------------------------------------------------
 //
-// Rubik: friendly and slightly rounded without being a novelty face, and
-// legible at small sizes on a phone. Shipped as one variable woff2 covering
-// weights 300-900. It also has an Arabic cut, so Phase 5 can add Arabic
-// without introducing a second typeface.
-//
-// Note the absence of a 'url' key. That key is what makes Odoo emit a <link>
-// to fonts.googleapis.com; we self-host instead and declare @font-face in
-// theme.scss.
+// Rubik: rounded and friendly, which suits the wordmark, and legible on a
+// phone. One variable woff2 per subset, weights 300-900, self-hosted. No 'url'
+// key on purpose - that is what makes Odoo request fonts.googleapis.com.
+// Rubik has an Arabic cut, so Phase 5 adds Arabic without a second typeface,
+// which matters for a brand whose own name is set in Arabic.
 
 $o-theme-font-configs: map-merge($o-theme-font-configs, (
     'Rubik': (
@@ -69,23 +59,15 @@ $o-theme-font-configs: map-merge($o-theme-font-configs, (
     ),
 ));
 
-// --- Website values ---------------------------------------------------------
-//
-// Each null in $o-base-website-values-palette falls through to Bootstrap.
-// Everything set here is a deliberate departure from stock Odoo.
-
 $o-user-website-values: (
     'font':          'Rubik',
     'headings-font': 'Rubik',
     'navbar-font':   'Rubik',
     'buttons-font':  'Rubik',
 
-    // Arabic needs more leading than Latin (Phase 5 sets that per-language).
-    // 1.6 is a comfortable Latin baseline to start from.
     'body-line-height':     1.6,
     'headings-line-height': 1.15,
 
-    // Rounded, friendly geometry. Pill buttons, softly rounded inputs.
     'btn-border-radius':    2rem,
     'btn-border-radius-sm': 1.5rem,
     'btn-border-radius-lg': 2.5rem,
@@ -99,7 +81,5 @@ $o-user-website-values: (
     'input-padding-y':        .625rem,
     'input-padding-x':        1rem,
 
-    // Links carry meaning on a storefront; underline them only on hover so the
-    // product grid does not turn into a wall of rules.
     'link-underline': 'hover',
 );

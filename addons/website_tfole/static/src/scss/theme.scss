@@ -46,7 +46,7 @@
 
 // The masthead strip above the navigation.
 .o_tfole_topbar {
-    background-color: $tfole-ink;
+    background-color: $tfole-brown;
     color: $tfole-cream;
     font-size: .8125rem;
     padding-block: .4rem;
@@ -74,32 +74,32 @@
 
 #wrapwrap footer {
     background-color: $tfole-sand;
-    color: $tfole-ink;
+    color: $tfole-brown;
 
     h5 {
         font-size: .875rem;
         font-weight: 700;
         letter-spacing: .06em;
         text-transform: uppercase;
-        color: $tfole-ink-muted;
+        color: $tfole-brown-muted;
     }
 
     a:not(.btn) {
-        color: $tfole-ink;
+        color: $tfole-brown;
         text-decoration: none;
 
         &:hover,
         &:focus {
-            color: $tfole-orange-interactive;
+            color: $tfole-brown-deep;
             text-decoration: underline;
             text-underline-offset: .2em;
         }
     }
 
     .o_footer_copyright {
-        border-block-start: 1px solid rgba(42, 30, 22, .12);
+        border-block-start: 1px solid rgba(74, 48, 24, .12);
         font-size: .8125rem;
-        color: $tfole-ink-muted;
+        color: $tfole-brown-muted;
     }
 }
 
@@ -107,17 +107,17 @@
 
 // Odoo's stock cards are square and flat against a white page. Warm them up.
 .card {
-    border-color: rgba(42, 30, 22, .08);
+    border-color: rgba(74, 48, 24, .08);
 }
 
 // Section backgrounds used by the layout and, later, by snippets.
 .o_tfole_section_cream { background-color: $tfole-cream; }
-.o_tfole_section_tint  { background-color: $tfole-orange-50; }
+.o_tfole_section_tint  { background-color: $tfole-yellow-50; }
 
 // A decorative use of the brand orange: large, bold, and never body text.
 .o_tfole_accent_rule {
     border: 0;
-    border-block-start: .25rem solid $tfole-orange;
+    border-block-start: .25rem solid $tfole-yellow;
     inline-size: 3.5rem;
     opacity: 1;
     margin-block: 1rem;
@@ -127,12 +127,12 @@
 // --- Shop: product cards ----------------------------------------------------
 
 // Age range badge. Uses the pale orange tint, not the brand orange: ink on
-// $tfole-orange-100 is 12.90:1, whereas white on the brand orange is 3.60:1
+// $tfole-yellow-100 is 12.90:1, whereas white on the brand orange is 3.60:1
 // and would fail at this text size.
 .o_tfole_age_badge {
     display: inline-block;
-    background-color: $tfole-orange-100;
-    color: $tfole-ink;
+    background-color: $tfole-yellow-100;
+    color: $tfole-brown;
     font-size: .75rem;
     font-weight: 600;
     line-height: 1.2;
@@ -187,7 +187,7 @@
 }
 
 .o_tfole_delivery_note {
-    color: $tfole-ink-muted;
+    color: $tfole-brown-muted;
     font-size: .9375rem;
 }
 
@@ -212,18 +212,18 @@
     min-block-size: 6.5rem;
     padding: 1rem;
     border-radius: $border-radius-lg;
-    background-color: $tfole-orange-50;
+    background-color: $tfole-yellow-50;
     border: 2px solid transparent;
-    color: $tfole-ink;
+    color: $tfole-brown;
     text-decoration: none;
     text-align: center;
     transition: border-color .15s ease, background-color .15s ease;
 
     &:hover,
     &:focus-visible {
-        background-color: $tfole-orange-100;
-        border-color: $tfole-orange;
-        color: $tfole-ink;
+        background-color: $tfole-yellow-100;
+        border-color: $tfole-yellow;
+        color: $tfole-brown;
         text-decoration: none;
     }
 }
@@ -235,11 +235,11 @@
 
 .o_tfole_age_card_range {
     font-size: .875rem;
-    color: $tfole-ink-muted;
+    color: $tfole-brown-muted;
 }
 
 .o_tfole_cta_panel {
-    background-color: $tfole-orange-50;
+    background-color: $tfole-yellow-50;
     border-radius: $border-radius-xl;
     padding-block: 2.5rem;
     padding-inline: 1.5rem;
@@ -250,8 +250,36 @@
         font-weight: 600;
 
         &:not(.collapsed) {
-            background-color: $tfole-orange-50;
-            color: $tfole-ink;
+            background-color: $tfole-yellow-50;
+            color: $tfole-brown;
         }
     }
+}
+
+// --- Brand sections ---------------------------------------------------------
+
+.o_tfole_eyebrow {
+    font-size: .8125rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: $tfole-brown-muted;
+    margin-block-end: .35rem;
+}
+
+.o_tfole_character_img {
+    inline-size: 100%;
+    max-inline-size: 15rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: $border-radius-xl;
+    background-color: $tfole-yellow-50;
+}
+
+// The header wordmark is artwork, so cap its height rather than letting the
+// navbar stretch to the image's natural size.
+.navbar-brand img,
+.o_tfole_topbar + header .navbar-brand img {
+    max-block-size: 2.75rem;
+    inline-size: auto;
 }
