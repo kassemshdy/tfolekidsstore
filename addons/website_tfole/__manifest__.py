@@ -10,6 +10,7 @@
     'depends': [
         'website',
         'website_sale',
+        'delivery',
     ],
 
     # Categories before products (products reference them by external ID),
@@ -19,6 +20,7 @@
         'data/product.template.csv',
         'data/product_images.xml',
         'data/website_config.xml',
+        'data/delivery.xml',
         'views/layout.xml',
         'views/footer.xml',
         'views/shop.xml',

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--
+        Delivery.
+
+        noupdate="1" is right here for two reasons: these are settings an
+        operator owns once the site is live, and noupdate still CREATES
+        records whose external ID does not yet exist. So an existing
+        production database picks these up on the next upgrade, and never has
+        them overwritten afterwards.
+    -->
+
+    <record id="product_delivery_lebanon" model="product.product">
+        <field name="name">Delivery</field>
+        <field name="default_code">TF-SHIP</field>
+        <field name="type">service</field>
+        <field name="list_price">5.00</field>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+    </record>
+
+    <record id="delivery_lebanon" model="delivery.carrier">
+        <field name="name">Delivery in Lebanon</field>
+        <field name="delivery_type">fixed</field>
+
+        <!--
+            PLACEHOLDER RATE, like the product prices. $5 flat across Lebanon
+            is what was asked for; confirm it against what couriers actually
+            charge before opening orders.
+        -->
+        <field name="fixed_price">5.00</field>
+
+        <!-- Free over $50, excluding the delivery charge itself. -->
+        <field name="free_over" eval="True"/>
+        <field name="amount">50.00</field>
+
+        <!--
+            This flag is what actually unlocks Cash on Delivery at checkout.
+            Odoo 19 ships a COD payment provider already enabled, but it is
+            filtered out unless the chosen delivery method allows it - which
+            is why checkout said "No payment method available".
+        -->
+        <field name="allow_cash_on_delivery" eval="True"/>
+
+        <field name="country_ids" eval="[(6, 0, [ref('base.lb')])]"/>
+        <field name="product_id" ref="product_delivery_lebanon"/>
+        <field name="is_published" eval="True"/>
+        <field name="sequence">1</field>
+    </record>
+
+</odoo>

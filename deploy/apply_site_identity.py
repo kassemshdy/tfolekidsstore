@@ -282,6 +282,35 @@ def set_footer_copy(env):
         _logger.info("footer copy replaced")
 
 
+def retire_default_carrier(env):
+    """Unpublish Odoo's stock "Standard delivery".
+
+    Odoo ships delivery.free_delivery_carrier published, priced at 0.00 and
+    with cash on delivery disabled. On a live shop that offers customers free
+    delivery nobody agreed to, and then refuses every payment method, because
+    COD is gated on the chosen carrier allowing it.
+
+    Guarded on it still looking like the stock record - stock name, zero
+    price, COD off. If somebody has repurposed it as their real carrier, it is
+    left alone.
+    """
+    carrier = env.ref('delivery.free_delivery_carrier', raise_if_not_found=False)
+    if not carrier or not carrier.is_published:
+        return
+
+    looks_stock = (
+        not carrier.allow_cash_on_delivery
+        and not carrier.fixed_price
+        and carrier.name == 'Standard delivery'
+    )
+    if not looks_stock:
+        _logger.info("default carrier has been customised; left alone")
+        return
+
+    carrier.is_published = False
+    _logger.info("unpublished Odoo's stock free delivery carrier")
+
+
 def set_homepage_description(env):
     """Replace Odoo's stock homepage description, which was the og:description."""
     page = env['website.page'].search([('url', '=', '/')], limit=1)
@@ -309,6 +338,7 @@ def main(env):
         ('company contact', set_company_contact),
         ('contact details', set_contact_details),
         ('footer copy', set_footer_copy),
+        ('default carrier', retire_default_carrier),
         ('homepage description', set_homepage_description),
     )
     for label, step in steps:
