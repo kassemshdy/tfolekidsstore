@@ -16,6 +16,25 @@
 
 set -euo pipefail
 
+# Railway mounts volumes owned by root, and the odoo image runs as uid 100.
+# Without this the very first write to the filestore fails with
+# "PermissionError: [Errno 13] Permission denied: '/var/lib/odoo/filestore'"
+# part-way through installing `base`, and the deploy crash-loops.
+#
+# So the container starts as root purely to take ownership of the mount, then
+# re-execs itself as odoo. Nothing below this block ever runs as root.
+#
+# The chown is recursive because a volume may already hold root-owned files
+# from an earlier boot. That is O(number of files); for a filestore of this
+# size it is not measurable, but it is worth knowing if the catalogue ever
+# grows into tens of thousands of images.
+if [ "$(id -u)" = "0" ]; then
+    echo "[tfole] taking ownership of /var/lib/odoo"
+    chown -R odoo:odoo /var/lib/odoo
+    echo "[tfole] dropping to uid 100 (odoo)"
+    exec setpriv --reuid=100 --regid=101 --init-groups "$0" "$@"
+fi
+
 : "${PORT:=8069}"
 : "${ODOO_ADMIN_PASSWD:?ODOO_ADMIN_PASSWD must be set}"
 

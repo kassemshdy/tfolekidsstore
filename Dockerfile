@@ -18,7 +18,10 @@ COPY ./deploy/start.sh /usr/local/bin/tfole-start
 RUN chmod +x /usr/local/bin/tfole-start \
  && chown -R odoo:odoo /mnt/extra-addons
 
-USER odoo
+# Deliberately NOT `USER odoo`. The container starts as root only long enough
+# to chown the mounted volume, then start.sh re-execs itself as uid 100.
+# Railway mounts volumes owned by root, so an image that starts unprivileged
+# cannot create its own filestore.
 
 # The odoo image's entrypoint execs an unrecognised command as-is, so this
 # runs our script rather than odoo directly.
