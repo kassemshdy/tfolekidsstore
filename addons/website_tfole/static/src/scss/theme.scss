@@ -42,6 +42,57 @@
         U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+// Arabic. Same family, so the site does not change typeface between
+// languages - Rubik has an Arabic cut, which is why it was chosen in Phase 2.
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300 900;
+    font-display: swap;
+    src: url('/website_tfole/static/src/fonts/rubik-arabic.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
+        U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF,
+        U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4,
+        U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24,
+        U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42,
+        U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54,
+        U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64,
+        U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E,
+        U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9,
+        U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+// --- Arabic typography ------------------------------------------------------
+//
+// Arabic needs more room than Latin at the same nominal size: no capitals to
+// anchor the line, and the diacritics and descenders want vertical space.
+// Scoped to the language rather than applied globally, so the English site is
+// untouched - which is what CLAUDE.md asks for.
+//
+// :lang() rather than [lang="ar_001"] because Odoo emits the BCP-47 form
+// (lang="ar-001") in the html tag, not the Odoo locale code.
+html:lang(ar) {
+    body {
+        font-size: 1.0625rem;
+        line-height: 1.85;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        line-height: 1.45;
+    }
+
+    .o_tfole_eyebrow {
+        // Letter-spacing does the opposite of helping in Arabic: it breaks
+        // the joins between letters.
+        letter-spacing: normal;
+    }
+
+    .o_tfole_hero_title {
+        line-height: 1.3;
+    }
+}
+
 // --- Brand-level page furniture --------------------------------------------
 
 // The masthead strip above the navigation.
@@ -313,5 +364,19 @@
         aspect-ratio: 1;
         object-fit: cover;
         inline-size: 100%;
+    }
+}
+
+// ===== Shop toolbar =====
+//
+// website_sale's toolbar is .btn-toolbar.flex-nowrap, which puts the sort
+// dropdown, the filter button and the layout switcher on one line. At 320px
+// that already overflows by a few pixels in English; in Arabic the labels are
+// longer and it overflows by ~70px, which gives the whole page a horizontal
+// scrollbar. Letting it wrap below md costs nothing on a phone.
+.products_header.btn-toolbar {
+    @include media-breakpoint-down(md) {
+        flex-wrap: wrap !important;
+        row-gap: .5rem;
     }
 }

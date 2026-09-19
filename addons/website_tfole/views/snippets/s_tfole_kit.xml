@@ -4,7 +4,7 @@
         <section class="s_tfole_kit pt48 pb48"
                  data-snippet="s_tfole_kit" data-name="The Activity Kit">
             <div class="container">
-                <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
                     <div class="col-lg-6">
                         <p class="o_tfole_eyebrow">The activity kit</p>
                         <h2 class="mb-3">Open the box.<br/>Let the playing start.</h2>

@@ -19,6 +19,24 @@
 
     <!-- ===== Shop grid ===== -->
 
+    <!--
+        Without a category, core leaves additional_title empty and the title
+        falls back to the view name ("Products"), which is not a translatable
+        field. A category page keeps its own (translated) category name.
+
+        This works because website_sale.products calls website.layout with no
+        attributes of its own: Odoo 19 only propagates a t-call body's t-set to
+        the called template in that case. The homepage's t-call carries
+        pageName.f, so the same trick does not work there - its title comes
+        from website_meta_title instead.
+    -->
+    <template id="products_title" inherit_id="website_sale.products" name="Tfole: shop page title">
+        <xpath expr="//t[@t-set='additional_title']" position="after">
+            <t t-if="not additional_title" t-set="additional_title">All products</t>
+        </xpath>
+    </template>
+
+
     <template id="products_grid" inherit_id="website_sale.products"
               name="Tfole: shop grid hook">
         <!--

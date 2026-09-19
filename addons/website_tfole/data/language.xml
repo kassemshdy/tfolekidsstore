@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Arabic.
+
+        Not noupdate: the function is idempotent and guards its own expensive
+        half, and it has to run on an already-installed production database,
+        which a noupdate record would skip.
+    -->
+    <function model="res.lang" name="_tfole_install_arabic"/>
+</odoo>

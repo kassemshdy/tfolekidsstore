@@ -47,6 +47,18 @@ HOMEPAGE_DESCRIPTION = (
     "active kids. More childhood. Less screen."
 )
 
+HOMEPAGE_DESCRIPTION_AR = (
+    "مشغّلات صوتية بلا شاشة، بطاقات قصص وصناديق لعب حقيقي "
+    "للأولاد. طفولة أكتر. شاشة أقلّ."
+)
+
+# The homepage title falls back to the view name ("Home"), which Odoo does not
+# translate. website_meta_title wins over that fallback and is translatable,
+# and it is also where an operator would set it in the SEO dialog.
+HOMEPAGE_TITLE = "Screen-free audio stories and real play | Tfole"
+
+HOMEPAGE_TITLE_AR = "قصص صوتية ولعب حقيقي بلا شاشة | Tfole"
+
 
 def _read_module_file(relpath):
     with file_open(relpath, 'rb') as fh:
@@ -220,11 +232,29 @@ ODOO_DEFAULT_ABOUT_RE = re.compile(
     r"<p>\s*We are a team of passionate people.*?</p>", re.DOTALL
 )
 
-TFOLE_ABOUT = (
-    "<p>Tfole makes screen-free audio players and real-play kits for kids. "
+TFOLE_ABOUT_TEXT = (
+    "Tfole makes screen-free audio players and real-play kits for kids. "
     "Stories to listen to, adventures to live, and a box of things to do with "
-    "your hands.<br/><br/>More childhood. Less screen.</p>"
+    "your hands.<br/><br/>More childhood. Less screen."
 )
+
+TFOLE_ABOUT = "<p>%s</p>" % TFOLE_ABOUT_TEXT
+
+TFOLE_ABOUT_TEXT_AR = (
+    "طفولة تصنع مشغّلات صوتية بلا شاشة وصناديق لعب حقيقي للأولاد. "
+    "قصص تنسمع، مغامرات تنعاش، وصندوق أشياء تنعمل بالإيد."
+    "<br/><br/>طفولة أكتر. شاشة أقلّ."
+)
+
+ARABIC_CODE = 'ar_001'
+
+# Labels this script writes into the footer. Odoo's own strings (Home, Contact
+# us, Follow us) already come translated with the core .po files.
+FOOTER_TERMS_AR = {
+    'Shop': 'المتجر',
+    'The Player': 'المشغّل',
+    'The Activity Kit': 'صندوق الأنشطة',
+}
 
 # The stock "Useful Links" list. Four of its six entries are href="#", which
 # are dead links on a live site.
@@ -281,6 +311,38 @@ def set_footer_copy(env):
         view.arch = new_arch
         _logger.info("footer copy replaced")
 
+    _translate_footer_terms(env, view)
+
+
+def _translate_footer_terms(env, view):
+    """Give the copy we just wrote an Arabic translation.
+
+    The footer lives in a stored, editor-owned view, so its terms cannot ride
+    in the module's .po - nothing there references this record. Writing the
+    English arch leaves the new terms untranslated, and on an Arabic-default
+    site that shows as English text in the footer.
+
+    Odoo tracks arch_db translations per term, so this fills in only the terms
+    this script introduced, and only where nobody has translated them already.
+    """
+    if not env['res.lang'].search_count([('code', '=', ARABIC_CODE)]):
+        return
+
+    translations, _context = view.get_field_translations('arch_db', [ARABIC_CODE])
+    mapping = {}
+    for row in translations:
+        source = row['source']
+        if row['value']:
+            continue  # already translated - an operator's wording wins
+        if source in FOOTER_TERMS_AR:
+            mapping[source] = FOOTER_TERMS_AR[source]
+        elif source == TFOLE_ABOUT_TEXT:
+            mapping[source] = TFOLE_ABOUT_TEXT_AR
+
+    if mapping:
+        view.update_field_translations('arch_db', {ARABIC_CODE: mapping})
+        _logger.info("footer copy translated (%d terms)", len(mapping))
+
 
 def retire_default_carrier(env):
     """Unpublish Odoo's stock "Standard delivery".
@@ -311,16 +373,85 @@ def retire_default_carrier(env):
     _logger.info("unpublished Odoo's stock free delivery carrier")
 
 
+def enable_arabic(env):
+    """Make Arabic first-class on an already-installed database.
+
+    data/website_config.xml handles a fresh install, but it is noupdate="1",
+    so an existing production database never receives the language settings
+    added to it later. Same gap the logo and phone fell into.
+
+    Guarded: English stays the default if somebody has already chosen a
+    default other than English, and the language list is only extended, never
+    replaced.
+    """
+    arabic = env.ref('base.lang_ar', raise_if_not_found=False)
+    english = env.ref('base.lang_en', raise_if_not_found=False)
+    if not arabic or not arabic.active:
+        return
+
+    website = env['website'].browse(1).exists()
+    if not website:
+        return
+
+    if arabic not in website.language_ids:
+        website.language_ids = [(4, arabic.id)]
+        _logger.info("Arabic added to the website languages")
+
+    # Only promote Arabic while the default is still the English Odoo
+    # installed with. A deliberate choice of any other default is respected.
+    if english and website.default_lang_id == english:
+        website.default_lang_id = arabic
+        _logger.info("Arabic set as the default website language")
+
+
 def set_homepage_description(env):
-    """Replace Odoo's stock homepage description, which was the og:description."""
+    """Give the homepage its own title and description, in both languages.
+
+    website_meta_description was Odoo's stock "This is the homepage of the
+    website", which was also the og:description. website_meta_title overrides
+    the untranslatable view name the <title> otherwise falls back to.
+
+    Both fields are translatable, so each language is written separately -
+    writing only English would leave the Arabic site showing English metadata.
+    """
     page = env['website.page'].search([('url', '=', '/')], limit=1)
     if not page:
         return
-    current = (page.website_meta_description or '').strip()
-    if current and current != ODOO_DEFAULT_HOMEPAGE_DESCRIPTION:
-        return
-    page.website_meta_description = HOMEPAGE_DESCRIPTION
-    _logger.info("homepage meta description set")
+
+    langs = ['en_US']
+    if env['res.lang'].search_count([('code', '=', ARABIC_CODE)]):
+        langs.append(ARABIC_CODE)
+
+    copy = {
+        'en_US': (HOMEPAGE_TITLE, HOMEPAGE_DESCRIPTION),
+        ARABIC_CODE: (HOMEPAGE_TITLE_AR, HOMEPAGE_DESCRIPTION_AR),
+    }
+
+    # Decide before writing anything. Writing the English value propagates to
+    # the other languages, so a guard read after that write would always see
+    # the English text and skip the Arabic.
+    wanted = {}
+    for lang in langs:
+        localised = page.with_context(lang=lang)
+        description = (localised.website_meta_description or '').strip()
+        wanted[lang] = (
+            # Only fill a title nobody has set; Odoo ships this field empty.
+            not (localised.website_meta_title or '').strip(),
+            not description or description == ODOO_DEFAULT_HOMEPAGE_DESCRIPTION,
+        )
+
+    # English first: it is the source language, and writing it overwrites the
+    # other languages' values.
+    for lang in langs:
+        localised = page.with_context(lang=lang)
+        title, description = copy[lang]
+        set_title, set_description = wanted[lang]
+        if set_title:
+            localised.website_meta_title = title
+        if set_description:
+            localised.website_meta_description = description
+
+    _logger.info("homepage metadata set (%s)", ', '.join(langs))
 
 
 def main(env):
@@ -339,6 +470,7 @@ def main(env):
         ('contact details', set_contact_details),
         ('footer copy', set_footer_copy),
         ('default carrier', retire_default_carrier),
+        ('arabic', enable_arabic),
         ('homepage description', set_homepage_description),
     )
     for label, step in steps:

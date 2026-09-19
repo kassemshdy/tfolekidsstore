@@ -1,0 +1,1172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_tfole
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-19 16:35+0000\n"
+"PO-Revision-Date: 2026-09-19 16:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_tfole
+#. odoo-python
+#: code:addons/website_tfole/models/product_template.py:0
+msgid "%(low)s-%(high)s months"
+msgstr "%(low)s-%(high)s شهر"
+
+#. module: website_tfole
+#. odoo-python
+#: code:addons/website_tfole/models/product_template.py:0
+msgid "%(low)s-%(high)s years"
+msgstr "%(low)s-%(high)s سنة"
+
+#. module: website_tfole
+#. odoo-python
+#: code:addons/website_tfole/models/product_template.py:0
+msgid "%(months)s+ months"
+msgstr "%(months)s+ شهر"
+
+#. module: website_tfole
+#. odoo-python
+#: code:addons/website_tfole/models/product_template.py:0
+msgid "%(years)s+ years"
+msgstr "%(years)s+ سنة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_uno
+msgid "112 cards"
+msgstr "١١٢ بطاقة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_reward_chart
+msgid "200 star stickers"
+msgstr "٢٠٠ ملصق نجمة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_dominoes
+msgid "28 wooden tiles"
+msgstr "٢٨ قطعة خشبية"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_memory_game
+msgid "36 picture tiles"
+msgstr "٣٦ قطعة مصوّرة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_kids_planner
+msgid "52-week undated planner"
+msgstr "مفكّرة ٥٢ أسبوع بدون تواريخ"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_highlight
+msgid "<span class=\"o_tfole_age_badge\">The player</span>"
+msgstr "<span class=\"o_tfole_age_badge\">المشغّل</span>"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_age_finder
+msgid ""
+"<span class=\"o_tfole_age_card_label\">Baby</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">0–2 years</span>"
+msgstr ""
+"<span class=\"o_tfole_age_card_label\">رضيع</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">0–2 سنة</span>"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_age_finder
+msgid ""
+"<span class=\"o_tfole_age_card_label\">Big kid</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">5–8 years</span>"
+msgstr ""
+"<span class=\"o_tfole_age_card_label\">ولد كبير</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">5–8 سنوات</span>"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_age_finder
+msgid ""
+"<span class=\"o_tfole_age_card_label\">Older</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">8+ years</span>"
+msgstr ""
+"<span class=\"o_tfole_age_card_label\">أكبر</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">8+ سنوات</span>"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_age_finder
+msgid ""
+"<span class=\"o_tfole_age_card_label\">Toddler</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">2–5 years</span>"
+msgstr ""
+"<span class=\"o_tfole_age_card_label\">طفل صغير</span>\n"
+"                            <span class=\"o_tfole_age_card_range\">2–5 سنوات</span>"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.layout_topbar
+msgid "<span>Screen-free play for curious, active kids</span>"
+msgstr "<span>لعب بلا شاشة لأطفال فضوليين ونشيطين</span>"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_kit
+msgid ""
+"A board game, five decks of challenge cards, character\n"
+"                            standees and a parents guide. Move, create, explore,\n"
+"                            connect, be kind, with nothing to charge."
+msgstr "لعبة لوح، خمس مجموعات بطاقات تحدّي، مجسّمات شخصيات ودليل للأهل. حركة، إبداع، استكشاف، تواصل ولطف، وما في شي بدّو شحن."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "A cardboard box is still the best toy."
+msgstr "صندوق الكرتون لسا أحلى لعبة."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "A childhood beyond the screen"
+msgstr "لطفولة أبعد من الشاشة"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_drawstring_bag
+msgid ""
+"A cotton drawstring bag for carrying the cards, the pawns and whatever else "
+"comes along."
+msgstr "كيس قطني برباط لحمل البطاقات والأحجار وأي شي تاني."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_monopoly_junior
+msgid "A shorter, simpler Monopoly built for younger players."
+msgstr "مونوبولي أقصر وأبسط، معمول للاعبين الصغار."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_play_ball
+msgid "A soft foam ball for indoors, and outdoors, and the hallway."
+msgstr "طابة إسفنجية طريّة للداخل وللبرّا وللممرّ."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_kids_planner
+msgid "A week to a page, with space for school, chores and the good stuff."
+msgstr "أسبوع بصفحة، مع مساحة للمدرسة والمهام والأشياء الحلوة."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_reward_chart
+msgid "A wipe-clean chart and a lot of stars."
+msgstr "لوحة بتنمسح وكتير نجوم."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_dominoes
+msgid ""
+"A wooden double-six set. Play the game or build the line and knock it down."
+msgstr "طقم دومينو خشبي. إلعب اللعبة أو رصّ الخط وكبّو."
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_active
+msgid "Active Play"
+msgstr "لعب حركي"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_tfole_box
+msgid "Activity Box"
+msgstr "صندوق الأنشطة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_jump_rope
+msgid "Adjustable jump rope"
+msgstr "حبل نطّ قابل للتعديل"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_jump_rope
+msgid "Adjustable rope with wooden handles."
+msgstr "حبل قابل للتعديل مع مقابض خشبية."
+
+#. module: website_tfole
+#: model:ir.model.fields,field_description:website_tfole.field_product_product__tfole_age_label
+#: model:ir.model.fields,field_description:website_tfole.field_product_template__tfole_age_label
+msgid "Age range"
+msgstr "الفئة العمرية"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.products_title
+msgid "All products"
+msgstr "كل المنتجات"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_memory_game
+msgid "Animal Memory Game"
+msgstr "لعبة ذاكرة الحيوانات"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_cards_animals
+msgid "Animal World Card Pack"
+msgstr "عالم الحيوانات"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_crafts
+msgid "Arts & Crafts"
+msgstr "فنون وأشغال"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_tfole_audio
+msgid "Audio Player & Cards"
+msgstr "المشغّل والبطاقات"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_cards_bedtime
+msgid "Bedtime Stories Card Pack"
+msgstr "قصص قبل النوم"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_games_board
+msgid "Board Games"
+msgstr "ألعاب لوحية"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "Can I exchange something?"
+msgstr "فيني بدّل شي؟"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_pencils
+msgid "Card box"
+msgstr "علبة كرتون"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_games_card
+msgid "Card Games"
+msgstr "ألعاب بطاقات"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Carry bag"
+msgstr "كيس الحفظ"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_headphones
+msgid "Carry pouch"
+msgstr "كيس حفظ"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_adventure_game
+msgid "Challenge cards"
+msgstr "بطاقات تحدّي"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Character standees"
+msgstr "مجسّمات الشخصيات"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Chat to Us"
+msgstr "احكي معنا"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_mini_player
+msgid "Clip strap"
+msgstr "شريط مشبك"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_pencils
+msgid "Colour Your World Pencils"
+msgstr "أقلام لوّن عالمك"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_activity_box
+msgid "Colouring pencils"
+msgstr "أقلام تلوين"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Companions for every adventure"
+msgstr "رفقات كل مغامرة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Connect"
+msgstr "تواصل"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.footer_copyright_tfole
+msgid "Copyright &amp;copy;"
+msgstr "حقوق النشر ©"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_drawstring_bag
+msgid "Cotton drawstring bag"
+msgstr "كيس قطني برباط"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Create"
+msgstr "إبداع"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Customer Photos"
+msgstr "صور الزبائن"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_delivery_lebanon_product_template
+msgid "Delivery"
+msgstr "التوصيل"
+
+#. module: website_tfole
+#: model:delivery.carrier,name:website_tfole.delivery_lebanon
+msgid "Delivery in Lebanon"
+msgstr "التوصيل داخل لبنان"
+
+#. module: website_tfole
+#: model:ir.model.fields,field_description:website_tfole.field_website__tfole_delivery_note
+msgid "Delivery note"
+msgstr "ملاحظة التوصيل"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_carry_case
+msgid "Elastic card holder"
+msgstr "حامل بطاقات مطّاطي"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_cards_animals
+msgid ""
+"Elephants, lions and giraffes, with the sounds and the habitats that go with"
+" them."
+msgstr "فيلة وأسود وزرافات، مع أصواتها وبيئاتها."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Everything that comes with it"
+msgstr "كل شي بيجي معو"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Explore"
+msgstr "استكشاف"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_cards_nature
+msgid "Explore Nature Card Pack"
+msgstr "استكشاف الطبيعة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_hero
+msgid "Explore the shop"
+msgstr "تصفّح المتجر"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_move_cards
+msgid "Fifty activity cards"
+msgstr "خمسين بطاقة نشاط"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_kindness_cards
+msgid "Fifty prompt cards"
+msgstr "خمسين بطاقة تذكير"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_move_cards
+msgid "Fifty things to do that need a body, not a battery."
+msgstr "خمسين نشاط بدّهن جسم، مش بطارية."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_age_finder
+msgid "Find something that fits right now."
+msgstr "لاقي شي بيناسب هلّق."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Five card decks"
+msgstr "خمس مجموعات بطاقات"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Five kinds of listening"
+msgstr "خمس أنواع من الاستماع"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_play_ball
+msgid "Foam play ball"
+msgstr "طابة إسفنجية"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "For winding down, not winding up."
+msgstr "للتهدئة، مش للتنشيط."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_pawns_dice
+msgid "Four pawns"
+msgstr "أربع أحجار"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_adventure_game
+msgid "Four pawns and two dice"
+msgstr "أربع أحجار ونردين"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_sticker_pack
+msgid "Four sticker sheets"
+msgstr "أربع أوراق ملصقات"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_adventure_game
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_monopoly_junior
+msgid "Game board"
+msgstr "لوح اللعبة"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_games
+msgid "Games"
+msgstr "ألعاب"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_cards_move
+msgid ""
+"Get-up-and-go prompts. The player talks, the child moves, and the sitting "
+"still stops."
+msgstr "تذكيرات للحركة. المشغّل بيحكي، الطفل بيتحرّك، والقعدة بتخلص."
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_cards_screens
+msgid "Goodbye Screens Card Pack"
+msgstr "وداعاً للشاشات"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_gratitude_journal
+msgid "Hardback journal, 120 pages"
+msgstr "دفتر بغلاف صلب، ١٢٠ صفحة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_highlight
+msgid "Hear the story. Finish it yourself."
+msgstr "اسمع الحكاية. وكمّلها بخيالك."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_player
+msgid "Hear the story.<br/>Finish it yourself."
+msgstr "اسمع الحكاية.<br/>وكمّلها بخيالك."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "How do I pay?"
+msgstr "كيف بدفع؟"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "How long does delivery take?"
+msgstr "قدّيش بياخد التوصيل؟"
+
+#. module: website_tfole
+#: model:ir.model.fields,help:website_tfole.field_product_product__tfole_age_label
+#: model:ir.model.fields,help:website_tfole.field_product_template__tfole_age_label
+msgid "Human-readable age range shown on the shop and product pages."
+msgstr "نطاق العمر كما يظهر في المتجر وصفحة المنتج."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Imagination and adventure. Turns the simplest thing into a game."
+msgstr "الخيال والمغامرة. بيحوّل أبسط شي للعبة."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Inside the box"
+msgstr "جوّا الصندوق"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Inside the Kit"
+msgstr "جوّا الصندوق"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_kids_planner
+msgid "Kids Weekly Planner"
+msgstr "مفكّرة الأسبوع للأطفال"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_kindness_cards
+msgid "Kindness Cards Deck"
+msgstr "بطاقات اللطف"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Learning &amp; Life Skills"
+msgstr "تعلّم ومهارات حياة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Less screen, more life. The one we are all trying to put down."
+msgstr "شاشة أقل، حياة أكتر. يلي كلنا عم نحاول نحطّو جانبًا."
+
+#. module: website_tfole
+#: model:ir.model.fields,help:website_tfole.field_product_product__tfole_age_min_months
+#: model:ir.model.fields,help:website_tfole.field_product_template__tfole_age_min_months
+msgid ""
+"Lower bound of the recommended age range, in months. Leave both age fields "
+"at 0 to hide the badge."
+msgstr "الحد الأدنى لنطاق العمر المقترح، بالأشهر. اترك حقلَي العمر على 0 لإخفاء الشارة."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_reward_chart
+msgid "Marker pen"
+msgstr "قلم تحديد"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_memory_game
+msgid "Matching pairs, which small children are unfairly good at."
+msgstr "مطابقة الأزواج، ويلي الأطفال الصغار شاطرين فيها بشكل مش عادل."
+
+#. module: website_tfole
+#: model:ir.model.fields,field_description:website_tfole.field_product_product__tfole_age_max_months
+#: model:ir.model.fields,field_description:website_tfole.field_product_template__tfole_age_max_months
+msgid "Maximum age (months)"
+msgstr "أقصى عمر (بالأشهر)"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Meet the Tfole heroes"
+msgstr "تعرّفوا على أبطال طفولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_contact_cta
+msgid "Message us on WhatsApp"
+msgstr "راسلنا على واتساب"
+
+#. module: website_tfole
+#: model:ir.model.fields,field_description:website_tfole.field_product_product__tfole_age_min_months
+#: model:ir.model.fields,field_description:website_tfole.field_product_template__tfole_age_min_months
+msgid "Minimum age (months)"
+msgstr "أدنى عمر (بالأشهر)"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_monopoly_junior
+msgid "Monopoly Junior"
+msgstr "مونوبولي جونيور"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_hero
+msgid "More childhood.<br/>Less screen."
+msgstr "طفولة أكتر.<br/>شاشة أقل."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "More time moving. More room to imagine. Better moments together."
+msgstr "وقت أكتر للحركة. مساحة أوسع للخيال. ولحظات أحلى سوا."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Move"
+msgstr "حركة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_cards_move
+msgid "Move and Play Card Pack"
+msgstr "حركتي ولعبي"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_adventure_game
+msgid ""
+"Move around the board with Taba and Ta Fole, and keep Soso the Screen away."
+msgstr "تحرّك عاللوح مع طابة وط فولة، وبعّد سوسو الشاشة."
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_move_cards
+msgid "Move Cards Deck"
+msgstr "بطاقات الحركة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_activity_box
+msgid "Move, Create, Explore, Friends and Kindness card decks"
+msgstr "بطاقات الحركة والإبداع والاستكشاف والأصدقاء واللطف"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Move, play, be active. Never sits still for long."
+msgstr "حركة ولعب ونشاط. ما بيقعد محلّو."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Movement &amp; Activities"
+msgstr "حركة وأنشطة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Music &amp; Relaxation"
+msgstr "موسيقى واسترخاء"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_gratitude_journal
+msgid "My Gratitude Journal"
+msgstr "دفتر الامتنان"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_contact_cta
+msgid "Not sure what suits?"
+msgstr "مش متأكد شو بيناسب؟"
+
+#. module: website_tfole
+#: model:ir.model.fields,help:website_tfole.field_website__tfole_delivery_note
+msgid ""
+"One line shown on every product page, e.g. how long delivery takes. "
+"Deliberately empty by default: delivery terms are a Phase 6 decision, and "
+"the product page must not promise something nobody has agreed to. The block "
+"is hidden while this is empty."
+msgstr "سطر واحد يظهر في كل صفحة منتج، مثلاً مدة التوصيل. يُترك فارغاً عمداً: شروط التوصيل قرار خاص بالمرحلة السادسة، وصفحة المنتج يجب ألا تَعِد بشيء لم يوافق عليه أحد. يبقى هذا القسم مخفياً ما دام الحقل فارغاً."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_kit
+msgid "Open the box.<br/>Let the playing start."
+msgstr "افتح الصندوق.<br/>وخلّي اللعب يبلّش."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Our movement"
+msgstr "حركتنا"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_cards_nature
+msgid ""
+"Outdoor adventures that end with a child asking to go outside and look for "
+"something."
+msgstr "مغامرات برّا بتخلص بطفل عم يطلب يطلع يدوّر على شي."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_carry_case
+msgid "Padded case for the player, the headphones and a deck of cards."
+msgstr "حقيبة مبطّنة للمشغّل والسماعات ومجموعة بطاقات."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_carry_case
+msgid "Padded zip case"
+msgstr "حقيبة مبطّنة بسحّاب"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_activity_box
+msgid "Parents guide"
+msgstr "دليل الأهل"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_pawns_dice
+msgid "Pawns and Dice Set"
+msgstr "طقم أحجار ونرد"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_planners
+msgid "Planners & Journals"
+msgstr "مفكّرات ودفاتر"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Play that needs a body, not a battery."
+msgstr "لعب بدّو جسم، مش بطارية."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Play that needs a body."
+msgstr "لعب بدّو جسم، مش بطارية."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_mini_player
+msgid ""
+"Pocket player with a clip. Takes the stories to the car and the playground."
+msgstr "مشغّل صغير مع مشبك. بياخد القصص عالسيارة وعالملعب."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Product Highlight"
+msgstr "منتج مميّز"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "Questions"
+msgstr "أسئلة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_player
+msgid "Quick start leaflet"
+msgstr "دليل تشغيل سريع"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_cards_bedtime
+msgid ""
+"Quiet stories for the end of the day, from the Bedtime Stories deck. Slot "
+"the card in and the lights go down."
+msgstr "قصص هادية لآخر النهار، من مجموعة قصص قبل النوم. حطّ البطاقة وبتخفّ الأضوية."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Quran &amp; Islamic Content"
+msgstr "قصص من القرآن"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_cards_quran
+msgid "Quran Stories Card Pack"
+msgstr "قصص من القرآن"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_pawns_dice
+msgid ""
+"Replacement pawns and dice for the Tfole Adventure board, in case one goes "
+"under the sofa."
+msgstr "أحجار ونرد بديلة للوح مغامرات طفولة، إذا ضاع شي تحت الكنباية."
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_reward_chart
+msgid "Reward Chart and Stars"
+msgstr "لوحة المكافآت والنجوم"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_adventure_game
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_monopoly_junior
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_uno
+msgid "Rules leaflet"
+msgstr "ورقة القوانين"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_player
+msgid ""
+"Screen-free audio player. Slot in a card and the story starts. No display to"
+" stare at."
+msgstr "مشغّل صوتي بلا شاشة. حطّ البطاقة وبتبلّش الحكاية. ما في شاشة يتطلّع عليها."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_ugc
+msgid "Screen-free moments"
+msgstr "لحظات بلا شاشة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_highlight
+msgid "See the player"
+msgstr "شوف المشغّل"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_player
+msgid "See the player range"
+msgstr "شوف مجموعة المشغّل"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_kit
+msgid "See what is in the kit"
+msgstr "شوف شو في بالصندوق"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Shop by Age"
+msgstr "تسوّق حسب العمر"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_age_finder
+msgid "Shop by age"
+msgstr "تسوّق حسب العمر"
+
+#. module: website_tfole
+#: model:ir.model.fields,help:website_tfole.field_product_product__tfole_box_contents
+#: model:ir.model.fields,help:website_tfole.field_product_template__tfole_box_contents
+msgid ""
+"Short list of what the customer actually receives. Shown on the product page"
+" when set, hidden when empty."
+msgstr "قائمة قصيرة بما يستلمه الزبون فعلياً. تظهر في صفحة المنتج عند تعبئتها، وتختفي عند تركها فارغة."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_kindness_cards
+msgid "Small daily prompts for being decent to people."
+msgstr "تذكيرات يومية صغيرة لنكون لطيفين مع الناس."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Soso the Screen"
+msgstr "سوسو الشاشة"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_cards_screens
+msgid ""
+"Soso the Screen turns up, and the stories are about putting the tablet down "
+"and doing something else."
+msgstr "سوسو الشاشة بيطلّ، والقصص عن حطّ التابلت وعمل شي تاني."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_standees
+msgid "Stands"
+msgstr "قواعد"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_activity_box
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_kids_planner
+msgid "Sticker sheet"
+msgstr "ورقة ملصقات"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_memory_game
+msgid "Storage box"
+msgstr "علبة حفظ"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_animals
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_bedtime
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_move
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_nature
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_quran
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_screens
+msgid "Storage sleeve"
+msgstr "غلاف حفظ"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Stories &amp; Adventures"
+msgstr "قصص ومغامرات"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_cards_quran
+msgid ""
+"Stories from the Quran, told for young listeners at a pace they can follow."
+msgstr "قصص من القرآن، مروية للصغار بإيقاع بيقدروا يتابعوه."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Stories that send them looking outside."
+msgstr "قصص بتخليهن يتطلّعوا برّا."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_hero
+msgid ""
+"Stories to listen to. Adventures to live. A screen-free\n"
+"                            audio player and a box of real play."
+msgstr ""
+"قصص تنسمع. مغامرات تنعاش.\n"
+"مشغّل صوتي بلا شاشة، وصندوق لعب حقيقي."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Ta Fole"
+msgstr "ط فولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Taba"
+msgstr "طابة"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_sticker_pack
+msgid ""
+"Taba, Ta Fole and friends, for covering things that should not be covered."
+msgstr "طابة وط فولة ورفقاتهن، لتغطية أشياء ما لازم تتغطّى."
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_standees
+msgid ""
+"Taba, Ta Fole and Soso as stand-up figures for the board game, or for "
+"playing out your own stories."
+msgstr "طابة وط فولة وسوسو كمجسّمات للعبة اللوح، أو لتمثيل قصصكن."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Taba, Ta Fole and Soso character standees"
+msgstr "مجسّمات طابة وط فولة وسوسو"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Tales that leave room to imagine."
+msgstr "حكايات بتترك مساحة للخيال."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_contact_cta
+msgid ""
+"Tell us the age and what they are into. We will point you\n"
+"                        at two or three things."
+msgstr "خبّرنا العمر وشو بيحب. منرشّحلك شغلتين تلاتة."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_animals
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_bedtime
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_move
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_nature
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_quran
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_cards_screens
+msgid "Ten story cards"
+msgstr "عشر بطاقات قصص"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_activity_box
+msgid "Tfole Activity Box"
+msgstr "صندوق أنشطة طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_adventure_game
+msgid "Tfole Adventure Board Game"
+msgstr "لعبة مغامرات طفولة"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_activity_box
+msgid "Tfole Adventure board game"
+msgstr "لعبة مغامرات طفولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Tfole Adventure game board"
+msgstr "لوح لعبة مغامرات طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_player
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_player
+msgid "Tfole Audio Player"
+msgstr "مشغّل طفولة الصوتي"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_carry_case
+msgid "Tfole Carry Case"
+msgstr "حقيبة طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_standees
+msgid "Tfole Character Standees"
+msgstr "مجسّمات شخصيات طفولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Tfole Characters"
+msgstr "شخصيات طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_drawstring_bag
+msgid "Tfole Drawstring Bag"
+msgstr "كيس طفولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "Tfole drawstring bag"
+msgstr "كيس طفولة برباط"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Tfole FAQ"
+msgstr "أسئلة طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_headphones
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_headphones
+msgid "Tfole Headphones"
+msgstr "سماعات طفولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "Tfole Hero"
+msgstr "واجهة طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_jump_rope
+msgid "Tfole Jump Rope"
+msgstr "حبل نطّ طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_mini_player
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_mini_player
+msgid "Tfole Mini Player"
+msgstr "مشغّل طفولة الصغير"
+
+#. module: website_tfole
+#: model:product.public.category,name:website_tfole.categ_tfole
+msgid "Tfole Originals"
+msgstr "منتجات طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_play_ball
+msgid "Tfole Play Ball"
+msgstr "طابة طفولة"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_sticker_pack
+msgid "Tfole Sticker Sheets"
+msgstr "ملصقات طفولة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "The Activity Kit"
+msgstr "صندوق الأنشطة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_kit
+msgid "The activity kit"
+msgstr "صندوق الأنشطة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_inside_kit
+msgid "The board game"
+msgstr "لعبة اللوح"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_uno
+msgid ""
+"The classic colour-and-number matching game. Quick to teach, hard to put "
+"down."
+msgstr "لعبة مطابقة الألوان والأرقام الكلاسيكية. سهلة التعليم، صعب تتركها."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "The Player"
+msgstr "المشغّل الصوتي"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_player
+msgid "The player"
+msgstr "المشغّل الصوتي"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_activity_box
+msgid ""
+"The screen-free activity kit. Board game, five card decks, stickers and a "
+"parents guide."
+msgstr "صندوق الأنشطة بلا شاشة. لعبة لوح، خمس مجموعات بطاقات، ملصقات ودليل للأهل."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "The small things that add up."
+msgstr "التفاصيل الصغيرة يلي بتفرق."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_kit
+msgid ""
+"The Tfole Adventure activity kit, board game, card decks and parents guide"
+msgstr "صندوق أنشطة مغامرات طفولة، لعبة اللوح ومجموعات البطاقات ودليل الأهل"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_player
+msgid ""
+"The Tfole player puts sound at the centre and leaves the\n"
+"                            pictures to the child. Slot in a card and the story starts.\n"
+"                            No display, nothing to swipe."
+msgstr "مشغّل طفولة بيحطّ الصوت بقلب التجربة وبيترك الصور للطفل. حطّ البطاقة وبتبلّش الحكاية. ما في شاشة ولا شي يتسحب."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_highlight
+msgid ""
+"The Tfole player puts sound at the centre and leaves the\n"
+"                            pictures to the child. Slot in a card, and the story starts."
+msgstr "مشغّل طفولة بيحطّ الصوت بقلب التجربة وبيترك الصور للطفل. حطّ البطاقة، وبتبلّش الحكاية."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_player
+msgid "The Tfole player, mini player, headphones, carry case and story cards"
+msgstr "مشغّل طفولة والمشغّل الصغير والسماعات والحقيبة وبطاقات القصص"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_standees
+msgid "Three character standees"
+msgstr "ثلاث مجسّمات شخصيات"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_characters
+msgid "Three characters. One invitation: live it, don't just watch it."
+msgstr "ثلاث شخصيات. دعوة وحدة: يلا نعيش… مش بس نتفرّج!"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_gratitude_journal
+msgid "Three lines a day. Enough to build the habit, short enough to finish."
+msgstr "ثلاث أسطر باليوم. كفاية لبناء العادة، وقصيرة لتخلص."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.homepage
+msgid "Time together that nobody scrolls through."
+msgstr "وقت سوا ما حدا بيتصفّحو."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_kindness_cards
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_move_cards
+msgid "Tin box"
+msgstr "علبة معدنية"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_monopoly_junior
+msgid "Tokens, cards and play money"
+msgstr "قطع وبطاقات ونقود لعب"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "Told at a pace young listeners follow."
+msgstr "مروية بإيقاع بيناسب الصغار."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_pencils
+msgid "Twelve colouring pencils"
+msgstr "اثنا عشر قلم تلوين"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_pencils
+msgid "Twelve pencils that survive being pressed too hard."
+msgstr "اثنا عشر قلمًا بيتحمّلوا الضغط القوي."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_pawns_dice
+msgid "Two dice"
+msgstr "نردان"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_uno
+msgid "UNO Card Game"
+msgstr "لعبة أونو"
+
+#. module: website_tfole
+#: model:ir.model.fields,help:website_tfole.field_product_product__tfole_age_max_months
+#: model:ir.model.fields,help:website_tfole.field_product_template__tfole_age_max_months
+msgid ""
+"Upper bound of the recommended age range, in months. 0 means open-ended and "
+"renders as a '+'."
+msgstr "الحد الأعلى لنطاق العمر المقترح، بالأشهر. القيمة 0 تعني مفتوحاً وتظهر بعلامة «+»."
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_mini_player
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_player
+msgid "USB-C charging cable"
+msgstr "كبل شحن USB-C"
+
+#. module: website_tfole
+#: model:product.template,description_sale:website_tfole.product_headphones
+msgid "Volume-limited headphones sized for small heads."
+msgstr "سماعات بصوت محدود ومقاس مناسب للرؤوس الصغيرة."
+
+#. module: website_tfole
+#: model:ir.model.fields,field_description:website_tfole.field_product_product__tfole_box_contents
+#: model:ir.model.fields,field_description:website_tfole.field_product_template__tfole_box_contents
+#: model_terms:ir.ui.view,arch_db:website_tfole.product_extra_details
+msgid "What's in the box"
+msgstr "شو في بالعلبة"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.snippets
+msgid "What's on the Cards"
+msgstr "شو في عالبطاقات"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_topics
+msgid "What's on the cards"
+msgstr "شو في عالبطاقات"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_reward_chart
+msgid "Wipe-clean chart"
+msgstr "لوحة بتنمسح"
+
+#. module: website_tfole
+#: model:product.template,name:website_tfole.product_dominoes
+msgid "Wooden Dominoes"
+msgstr "دومينو خشبي"
+
+#. module: website_tfole
+#: model_terms:product.template,tfole_box_contents:website_tfole.product_dominoes
+msgid "Wooden storage box"
+msgstr "علبة حفظ خشبية"
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "Write the real answer here once delivery is set up."
+msgstr "اكتب الجواب الحقيقي هون بعد ضبط التوصيل."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "Write the real answer here once payment is set up."
+msgstr "اكتب الجواب الحقيقي هون بعد ضبط الدفع."
+
+#. module: website_tfole
+#: model_terms:ir.ui.view,arch_db:website_tfole.s_tfole_faq
+msgid "Write the real answer here once returns are agreed."
+msgstr "اكتب الجواب الحقيقي هون بعد الاتفاق على الإرجاع."

@@ -52,6 +52,14 @@
         <field name="favicon" type="base64" file="website_tfole/static/src/img/brand/tfole-favicon.png"/>
 
         <!--
+            Arabic is the primary language, so it is the site default and
+            English sits at /en. Tfole's own site is Arabic-only; a Lebanese
+            customer arriving from Instagram should not land on English.
+        -->
+        <field name="language_ids" eval="[(6, 0, [ref('base.lang_ar'), ref('base.lang_en')])]"/>
+        <field name="default_lang_id" ref="base.lang_ar"/>
+
+        <!--
             TODO(Tfole): social handles still needed. Deliberately not filled
             with invented values - a guessed handle points the whole storefront
             at somebody else's account.
