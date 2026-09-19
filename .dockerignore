@@ -10,3 +10,4 @@ Makefile
 .env.example
 config/odoo.conf
 **/__pycache__
+*.zip

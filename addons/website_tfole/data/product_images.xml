@@ -4,57 +4,81 @@
     <!--
         Product images.
 
-        These are brand-coloured PLACEHOLDER tiles, not photography. Swap the
-        files in static/src/img/products/ and run make upgrade; these records
-        are not noupdate, so the file always wins.
+        Real photography for the Tfole player line and the activity kit;
+        brand-coloured placeholder tiles for everything else until photos
+        exist. Not noupdate, so swapping a file and running make upgrade wins.
+
+        The six story card packs all point at the same group shot, because
+        that is the only card photograph there is. Individual card fronts
+        would be better.
     -->
 
     <record id="product_player" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_player.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-player.jpg"/>
     </record>
 
     <record id="product_mini_player" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_mini_player.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-mini-player.jpg"/>
     </record>
 
     <record id="product_headphones" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_headphones.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-headphones.jpg"/>
     </record>
 
     <record id="product_carry_case" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_carry_case.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-carrying-case.jpg"/>
     </record>
 
     <record id="product_cards_bedtime" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_bedtime.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-audio-cards.jpg"/>
     </record>
 
     <record id="product_cards_quran" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_quran.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-audio-cards.jpg"/>
     </record>
 
     <record id="product_cards_nature" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_nature.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-audio-cards.jpg"/>
     </record>
 
     <record id="product_cards_animals" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_animals.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-audio-cards.jpg"/>
+    </record>
+
+    <record id="product_cards_move" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-audio-cards.jpg"/>
+    </record>
+
+    <record id="product_cards_screens" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/tfole-audio-cards.jpg"/>
     </record>
 
     <record id="product_activity_box" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_activity_box.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/game-box.jpg"/>
     </record>
 
     <record id="product_adventure_game" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_adventure_game.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/game-board.jpg"/>
     </record>
 
     <record id="product_move_cards" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_move_cards.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/card-decks.jpg"/>
     </record>
 
     <record id="product_kindness_cards" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_kindness_cards.png"/>
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/activity-cards.jpg"/>
+    </record>
+
+    <record id="product_standees" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/character-standees.jpg"/>
+    </record>
+
+    <record id="product_pawns_dice" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/pawns-and-die.jpg"/>
+    </record>
+
+    <record id="product_drawstring_bag" model="product.template">
+        <field name="image_1920" type="base64" file="website_tfole/static/src/img/photos/drawstring-bag.jpg"/>
     </record>
 
     <record id="product_uno" model="product.template">
@@ -99,14 +123,6 @@
 
     <record id="product_play_ball" model="product.template">
         <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_play_ball.png"/>
-    </record>
-
-    <record id="product_cards_move" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_move.png"/>
-    </record>
-
-    <record id="product_cards_screens" model="product.template">
-        <field name="image_1920" type="base64" file="website_tfole/static/img/products/product_cards_screens.png"/>
     </record>
 
 </odoo>

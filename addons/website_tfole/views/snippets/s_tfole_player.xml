@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_tfole_player" name="The Player">
+        <section class="s_tfole_player o_tfole_section_tint pt48 pb48"
+                 data-snippet="s_tfole_player" data-name="The Player">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <p class="o_tfole_eyebrow">The player</p>
+                        <h2 class="mb-3">Hear the story.<br/>Finish it yourself.</h2>
+                        <p class="mb-4">
+                            The Tfole player puts sound at the centre and leaves the
+                            pictures to the child. Slot in a card and the story starts.
+                            No display, nothing to swipe.
+                        </p>
+                        <a href="/shop/category/tfole-originals-audio-player-cards-2" class="btn btn-primary btn-lg">
+                            See the player range
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/website_tfole/static/src/img/photos/full-player-family.jpg"
+                             alt="The Tfole player, mini player, headphones, carry case and story cards"
+                             class="img img-fluid rounded-4 w-100"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

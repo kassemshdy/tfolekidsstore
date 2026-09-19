@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Footer branding ===== -->
+
+    <template id="footer_no_odoo_branding" inherit_id="website.layout"
+              name="Tfole: remove the Odoo brand promotion">
+        <!--
+            Removes the "Powered by Odoo" block from the footer.
+
+            position="replace" with an empty body is the only way to remove a
+            node in QWeb inheritance, so it is used deliberately here.
+
+            This is a badge Odoo renders for its own marketing, not a licence
+            condition: website_tfole is LGPL-3 on Odoo Community, and the LGPL
+            requires no attribution in a rendered page.
+
+            Upgrade note: if a future Odoo renames or moves this t-call, this
+            XPath stops matching and the module fails to load. Check it when
+            moving off 19.0.
+        -->
+        <xpath expr="//t[@t-call='web.brand_promotion']" position="replace"/>
+    </template>
+
+    <template id="footer_copyright_tfole" inherit_id="website.layout"
+              name="Tfole: copyright line" priority="20">
+        <!--
+            Odoo's own website.footer_copyright_company_name (priority 15)
+            hardcodes "Copyright (c) Company name". A higher priority means
+            this inherit is applied after it, so ours is what survives.
+
+            The name is read from the company record rather than typed in, so
+            renaming the company in Settings updates the footer.
+        -->
+        <xpath expr="//footer//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="o_footer_copyright_name me-2 small">
+                Copyright &amp;copy; <t t-out="website.company_id.name or res_company.name"/>
+            </span>
+        </xpath>
+    </template>
+
+</odoo>

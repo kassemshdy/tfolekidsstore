@@ -19,8 +19,9 @@
 
             <t t-call="website_tfole.s_tfole_hero"/>
 
-            <!-- From the story to the game: the player. -->
-            <t t-call="website_tfole.s_tfole_highlight"/>
+            <!-- The two product lines, each with its own section. -->
+            <t t-call="website_tfole.s_tfole_player"/>
+            <t t-call="website_tfole.s_tfole_kit"/>
 
             <t t-call="website_tfole.s_tfole_characters"/>
 
