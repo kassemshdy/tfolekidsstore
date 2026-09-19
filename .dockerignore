@@ -1,0 +1,12 @@
+.git
+.gitignore
+tests
+data
+docs
+*.md
+docker-compose.yml
+Makefile
+.env
+.env.example
+config/odoo.conf
+**/__pycache__
